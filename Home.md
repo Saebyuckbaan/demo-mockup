@@ -50,7 +50,7 @@ To install pgadmin:
 Linux:
 sudo apt-get install postgresql pgadmin3
 
-Launch ‘pgAdmin’ by typing pgadmin3 in terminal
+Launch ‘pgAdmin’ by typing `pgadmin3` in terminal
 Then you should connect to remote server using connect button. You will see the window.
 
 >name: DELPHI database 
