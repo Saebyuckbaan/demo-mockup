@@ -85,7 +85,7 @@ Part 2 will first be graded on if Postgres and D3 is functional in your applicat
 
 Extra Credit: If your team incorporates another data set outside from the DELPHI database, and utilizes it in a meaningful way in your application, then you will receive a maximum of 2 additional points. If time permits, it’s **highly** recommended that you attempt to this portion of the assignment as well.
 
-* (Notes) For the optional assignment if you would like to use data at a global scale:
+* NOTE: For the optional assignment if you would like to use data at a global scale:
 You can use the UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
 
 * You can login to the [UN Data API](https://www.undata-api.org/)
