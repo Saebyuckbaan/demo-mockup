@@ -26,8 +26,7 @@ To help get started we have provided some resources to help you brush up on the 
 	* Text Learners: https://square.github.io/intro-to-d3/
 	* Video Learners: https://www.youtube.com/watch?v=8jvoTV54nXw
 
-## The Assignment (Part 1A)
-### D3 and AJAX requests: Smoking Data at a Global Scale (WHO)
+## The Assignment (Part 2) - Getting Started
 
 This assignment contains an overview of several technologies that you can use in conjunction with D3 such as AJAX, HTML5, and NodeJS. The first part of the assignment shows you how to create webpages with D3 and AJAX and how to get dynamically generated data from a MySQL database. 
 
