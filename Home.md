@@ -26,9 +26,9 @@ To help get started we have provided some resources to help you brush up on the 
 	* Text Learners: https://square.github.io/intro-to-d3/
 	* Video Learners: https://www.youtube.com/watch?v=8jvoTV54nXw
 
-## The Assignment (Part 2) - Getting Started
+## The Assignment (Part 1) - Getting Started
 
-This assignment contains an overview of several technologies that you can use in conjunction with D3 such as AJAX, HTML5, and NodeJS. The first part of the assignment shows you how to create webpages with D3 and AJAX and how to get dynamically generated data from a MySQL database. 
+This assignment contains an overview of several technologies that you can use in conjunction with D3 such as AJAX, HTML5, and NodeJS. The first part of the assignment shows you how to create webpages with D3 and AJAX and how to get dynamically generated data from a Postgres database. 
 
 Many toolkits are available that provide AJAX support and if you need this functionality in D3 there are at least two methods of making AJAX based requests. One method provides generic AJAX support and the second provides support for JSON data.
 
@@ -38,8 +38,7 @@ Many toolkits are available that provide AJAX support and if you need this funct
 
 `d3.tsv()` does not return anything, it is an asynchronous call (like when you make AJAX requests whith jQuery). So everything takes place in its callback.
 
-The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) database is a PostgreSQL database. 
-There are hundreds of tables. Find and note table of interest using both pgAdmin and the Boilerplate
+The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) database the PostgreSQL database you'll be using for Part 1 and Part 2 in this assignment.
 
 ### Connecting to DELPHI database Using pgAdmin
 
@@ -78,11 +77,14 @@ You will see
 
 From databases navigate to delpgibetadb. Please note that you should use (and only have access to) the tables found in 'cogs121_16_raw' and 'cogs121_16_integrated' schema.
 
-### Connecting to DELPHI database using the Boilerplate
+### The Actual Assignment
+Now that you have learned how to do AJAX request and have some understanding of how the DELPHI database is structured, you're ready to start using what you've learned to create a basic web application that visualizes this dataset.
 
-1.	Now access the DELPHI database using the [boilerplate](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2) provided. Since you just went over AJAX requests, this is a logical next step.
-2.	In the boilerplate package, there are some parts that are unimplemented (refer to code in boilerplate). You will need to make those parts functional and you will ALSO need to create an .env file that has the authentication information for the DELPHI database
-3.	Direct yourself to the ‘Smoking Prevalence in Adults.’  You will need to obtain the year, gender, number of respondents, and percentage of current smokers
+1. Clone DELPHI database using the [boilerplate](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2) provided. There will be some parts of the application that have errors or are unimplemented, it is your job to fix these errors and fill in the functions.
+2. Create a .env file to properly connect to the database.
+3. On the side, connect to the DELPHI database using PGAdmin (or any instance of a Postgres driver) and find the 'Smoking Prevalance in Adults' and familiraze yourself with the table schema.
+4. In the main view of the application, there is a table has some attributes of this table (ie. Year, Gender, Percentage, Respondents). It's your job to extract this information from the database in your web application and display this data using D3.
+5. Your end result should look something like this: (TODO Add screenshot)
 
 ## The Assignment (Part 2) - Putting Everything Together
 Now that you have learned to retrieve data using SQL and know how to make basic visualizations using D3, it’s time to tie these tools into your design. The main goal of this part of the assignment is to apply design-thinking into new tools to tackle problems with a data-driven approach. Unlike the previous assignment where your team chose a theme for your application, we are providing scenarios that you will choose from and that scenario will be the focus of your application. Keep in mind, these scenarios will be fairly broad, but your job is to choose a specific aspect of the problem and address that using the tools that you have learned throughout the course.
