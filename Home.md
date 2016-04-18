@@ -80,7 +80,7 @@ From databases navigate to delpgibetadb. Please note that you should use (and on
 
 ### Connecting to DELPHI database using the Boilerplate
 
-1.	Now access the DELPHI database using the [boilerplate]() provided. Since you just went over AJAX requests, this is a logical next step.
+1.	Now access the DELPHI database using the [boilerplate](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2) provided. Since you just went over AJAX requests, this is a logical next step.
 2.	In the boilerplate package, there are some parts that are unimplemented (refer to code in boilerplate). You will need to make those parts functional and you will ALSO need to create an .env file that has the authentication information for the DELPHI database
 3.	Direct yourself to the ‘Smoking Prevalence in Adults.’  You will need to obtain the year, gender, number of respondents, and percentage of current smokers
 
