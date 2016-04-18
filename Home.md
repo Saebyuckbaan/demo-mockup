@@ -27,7 +27,7 @@ To help get started we have provided some resources to help you brush up on the 
 	* Video Learners: https://www.youtube.com/watch?v=8jvoTV54nXw
 
 ## The Assignment (Part 1A)
-### D3 and AJAX requests: World Happiness Report and Data at a Global Scale
+### D3 and AJAX requests: Smoking Data at a Global Scale (WHO)
 
 This assignment contains an overview of several technologies that you can use in conjunction with D3 such as AJAX, HTML5, and NodeJS. The first part of the assignment shows you how to create webpages with D3 and AJAX and how to get dynamically generated data from a MySQL database. 
 
@@ -39,26 +39,7 @@ Many toolkits are available that provide AJAX support and if you need this funct
 
 `d3.tsv()` does not return anything, it is an asynchronous call (like when you make AJAX requests whith jQuery). So everything takes place in its callback.
 
-1. Fork [World Happiness Report 2016](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2/tree/master/World-Happiness-Report-2016). This simple exercise will illustrate how to use `d3.xhr ()`  to retrieve a dataset for populating a bar chart. The data values are just a set of random numbers but let’s make the assumption that the data represents a measure of ‘happiness’ (range 0-10) for 20 unspecified countries.
 
-2. For the first part of the assignment, we want to visualize the actual ‘happiness’ data. (Yes, that exists.)
-You can obtain this data from the [World Happiness Data Report](http://worldhappiness.report/wp-content/uploads/sites/2/2016/03/HR-V1_web.pdf). The World Happiness Report is a measure of happiness published by the United Nations Sustainable Development Solutions Network.
-_Notice the document is a PDF. You will have to get creative with data extraction._ Although Wikipedia has this data as well, the point of this exercise is to appreciate how physical data is transcribed, processed and exchanged digitally. 
-
-3. **Make a bar chart with all 157 countries with the country on the x-axis and Happiness value (1-10) on y-axis.** Take a screenshot of your result. For a bonus exercise find the average happiness index of each of the 6 continents—excluding Antarctica. Not too bad right? Now you know how to pass any data to d3!!!
-
-4. (Notes) For the final project if you would like to use data at a global scale:
-You can use the UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
-
-5. You can login to the [UN Data API](https://www.undata-api.org/)
-
-> Username: COGS121
-
-> Password: 121cogs
-
-> Application ID: 748700a6
-
-> Application Keys: da089213c5409863a37878ee4adfee
 
 
 
@@ -103,6 +84,20 @@ Part 1 is focused on getting you familiar with new concepts and utilizing new to
 Part 2 will first be graded on if Postgres and D3 is functional in your application. This will be graded on a binary scale — you receive points upon completion if working without errors. The majority of Part 2 will be graded on application and execution of the design principles mentioned. You can receive a maximum of 2 points for each criteria, which totals up to a maximum of 12 points cumulative for the this section. If your application shows no evidence or mis-use of a principle, then you will receive 0 points for that criteria. Likewise, if there is some evidence that your team as attempted to address a criteria, then you will receive 1 point.
 
 Extra Credit: If your team incorporates another data set outside from the DELPHI database, and utilizes it in a meaningful way in your application, then you will receive a maximum of 2 additional points. If time permits, it’s **highly** recommended that you attempt to this portion of the assignment as well.
+
+* (Notes) For the optional assignment if you would like to use data at a global scale:
+You can use the UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
+
+* You can login to the [UN Data API](https://www.undata-api.org/)
+
+> Username: COGS121
+
+> Password: 121cogs
+
+> Application ID: 748700a6
+
+> Application Keys: da089213c5409863a37878ee4adfee
+
 
 It is expected that each group member equally contributes to the assignment. The distribution of work should determined by group consensus and responsibility should be given that member's expertise (either technical or design). **Document the distribution of work in the README file.**
 
