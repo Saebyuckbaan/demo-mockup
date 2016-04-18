@@ -41,7 +41,7 @@ Many toolkits are available that provide AJAX support and if you need this funct
 The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) database is a PostgreSQL database. 
 There are hundreds of tables. Find and note table of interest using both pgAdmin and the Boilerplate
 
-***Connecting to DELPHI database Using pgAdmin
+### Connecting to DELPHI database Using pgAdmin
 
 To install pgadmin:
 MacOSX:
@@ -54,9 +54,13 @@ Launch ‘pgAdmin’ by typing pgadmin3 in terminal
 Then you should connect to remote server using connect button. You will see the window.
 
 >name: DELPHI database 
+
 >host: delphidata.ucsd.edu
+
 >port: 5432
+
 >username: cogs121_16_user
+
 >password:  mcH8Yjs_n#2(xp
 
 >Maintenance db: delphibetadb
