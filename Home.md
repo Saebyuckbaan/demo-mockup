@@ -78,8 +78,6 @@ You will see
 
 From databases navigate to delpgibetadb. Please note that you should use (and only have access to) the tables found in 'cogs121_16_raw' and 'cogs121_16_integrated' schema.
 
-Each schema contains tables which can be used when creating queries. Also it contains such important information as type information of table's columns.
-
 ### Connecting to DELPHI database using the Boilerplate
 
 1.	Now access the DELPHI database using the [boilerplate]() provided. Since you just went over AJAX requests, this is a logical next step.
