@@ -38,9 +38,57 @@ Many toolkits are available that provide AJAX support and if you need this funct
 
 `d3.tsv()` does not return anything, it is an asynchronous call (like when you make AJAX requests whith jQuery). So everything takes place in its callback.
 
+The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) database is a PostgreSQL database. 
+There are hundreds of tables. Find and note table of interest using both pgAdmin and the Boilerplate
 
+***Connecting to DELPHI database Using pgAdmin
 
+To install pgadmin:
+MacOSX:
+http://macappstore.org/pgadmin3/
 
+Linux:
+sudo apt-get install postgresql pgadmin3
+
+Launch ‘pgAdmin’ by typing pgadmin3 in terminal
+Then you should connect to remote server using connect button. You will see the window.
+
+>name: DELPHI database 
+>host: delphidata.ucsd.edu
+>port: 5432
+>username: cogs121_16_user
+>password:  mcH8Yjs_n#2(xp
+
+>Maintenance db: delphibetadb
+
+and then press OK. 
+It may show a warning. Simply press OK.
+
+Then in object browser in main window double-click "Server groups". It will expand to "servers". Then double-click "Servers". It will expand to DELPHI database. Expand the DELPHI database.
+
+You will see 
+* databases
+* tablespaces
+* group rules
+* login roles
+
+From databases navigate to delpgibetadb. In schemas you will see all schemas it has.
+
+> analytics
+> analytics_ct_
+> cogs121_16_integrated
+> cogs121_16_raw
+> gwas
+> public
+> share
+
+Each schema contains tables which can be used when creating queries. Also it contains such important information as type information of table's columns.
+
+Connecting to DELPHI database using the Boilerplate
+
+1.	Now access the DELPHI database using the [boilerplate]() provided. Since you just went over AJAX requests, this is a logical next step.
+2.	In the boilerplate package, there are some parts that are unimplemented (refer to code in boilerplate). You will need to make those parts functional and you will ALSO need to create an .env file that has the authentication information for the DELPHI database
+3.	Direct yourself to the ‘Smoking Prevalence in Adults.’  You will need to obtain the year, gender, number of respondents, and percentage of current smokers
 
 ## The Assignment (Part 2) - Putting Everything Together
 Now that you have learned to retrieve data using SQL and know how to make basic visualizations using D3, it’s time to tie these tools into your design. The main goal of this part of the assignment is to apply design-thinking into new tools to tackle problems with a data-driven approach. Unlike the previous assignment where your team chose a theme for your application, we are providing scenarios that you will choose from and that scenario will be the focus of your application. Keep in mind, these scenarios will be fairly broad, but your job is to choose a specific aspect of the problem and address that using the tools that you have learned throughout the course.
