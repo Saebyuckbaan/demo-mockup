@@ -78,17 +78,17 @@ You will see
 
 From databases navigate to delpgibetadb. In schemas you will see all schemas it has.
 
-> analytics
-> analytics_ct_
-> cogs121_16_integrated
-> cogs121_16_raw
-> gwas
-> public
-> share
+* analytics
+* analytics_ct_
+* cogs121_16_integrated
+* cogs121_16_raw
+* gwas
+* public
+* share
 
 Each schema contains tables which can be used when creating queries. Also it contains such important information as type information of table's columns.
 
-Connecting to DELPHI database using the Boilerplate
+### Connecting to DELPHI database using the Boilerplate
 
 1.	Now access the DELPHI database using the [boilerplate]() provided. Since you just went over AJAX requests, this is a logical next step.
 2.	In the boilerplate package, there are some parts that are unimplemented (refer to code in boilerplate). You will need to make those parts functional and you will ALSO need to create an .env file that has the authentication information for the DELPHI database
