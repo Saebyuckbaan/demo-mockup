@@ -76,15 +76,7 @@ You will see
 * group rules
 * login roles
 
-From databases navigate to delpgibetadb. In schemas you will see all schemas it has.
-
-* analytics
-* analytics_ct_
-* cogs121_16_integrated
-* cogs121_16_raw
-* gwas
-* public
-* share
+From databases navigate to delpgibetadb. Please note that you should use (and only have access to) the tables found in 'cogs121_16_raw' and 'cogs121_16_integrated' schema.
 
 Each schema contains tables which can be used when creating queries. Also it contains such important information as type information of table's columns.
 
