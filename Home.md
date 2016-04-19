@@ -91,7 +91,7 @@ For this section of the assignment you will be creating a basic bar chart from s
     ```
 
 2. **Defining the Chart**
-	* In this step you also won't need to do any coding. In this step we are defining an SVG element which will be the canvas for the bar chart. The width and height attributes determine how large the SVG element will be on the screen. To avoid having the canvas crammed in the corner of the screen we move the canvas by translating it according to the defined margins.
+	* Likewise you won't need to do any coding. In this step we are defining an SVG element which will be the canvas for the bar chart. The width and height attributes determine how large the SVG element will be on the screen. To avoid having the canvas crammed in the corner of the screen we move the canvas by translating it according to the defined margins.
 	
     ```
      var chart = d3
