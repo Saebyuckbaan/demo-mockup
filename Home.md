@@ -29,13 +29,13 @@ To help get started we have provided some resources to help you brush up on the 
 
 This assignment contains an overview of several technologies that you can use in conjunction with D3 such as AJAX, HTML5, and NodeJS. The first part of the assignment shows you how to create webpages with D3 and AJAX and how to get dynamically generated data from a Postgres database. 
 
-Many toolkits are available that provide AJAX support and if you need this functionality in D3 there are at least two methods of making AJAX based requests. One method provides generic AJAX support and the second provides support for JSON data.
+Many toolkits are available that provide AJAX support and if you need this functionality in D3 there are some built-in functions that can be used to retrieve data from a URL. One method provides generic AJAX support and the second provides support for JSON data.
 
-``D3.xhr(requestURl,callback);``
+``d3.xhr(requestURL, callback)``
 
-``D3.json(requestURL,callback);``
+``d3.json(requestURL, callback)``
 
-`d3.tsv()` does not return anything, it is an asynchronous call (like when you make AJAX requests whith jQuery). So everything takes place in its callback.
+``d3.tsv(requestURL, callback)`` does not return anything, it is an asynchronous call. So everything takes place in its callback.
 
 The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) database the PostgreSQL database you'll be using for Part 1 and Part 2 in this assignment.
 
@@ -130,7 +130,8 @@ Extra Credit: If your team incorporates another data set outside from the DELPHI
 * NOTE: For the optional assignment if you would like to use data at a global scale:
 You can use the UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
 
-* You can login to the [UN Data API](https://www.undata-api.org/)
+* You can login to the <a href="https://www.undata-api.org/" target="_blank">UN Data API<a/>
+
 
 > Username: COGS121
 
