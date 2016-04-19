@@ -18,12 +18,13 @@ The purpose of this assignment is to build off of previous assignments to tackle
 To help get started we have provided some resources to help you brush up on the technologies we will be using in this assignment.
 
 * Tutorial videos for SQL
-	* Text Learners: <a href="http://www.w3schools.com/sql/" target="_blank" class="_">http://www.w3schools.com/sql/</a>
-	* Video Learners: <a href="https://www.youtube.com/watch?v=7Vtl2WggqOg" target="_blank" class="_">https://www.youtube.com/watch?v=7Vtl2WggqOg</a>
-	* <a href="http://sqlzoo.net/" target="_blank" class="_">(Lab) Hands-on Learners: </a>
+	* <a href="http://www.w3schools.com/sql/" target="_blank" class="_">Text Learners</a>
+	* <a href="https://www.youtube.com/watch?v=7Vtl2WggqOg" target="_blank" class="_">Video Learners</a>
+	* <a href="http://sqlzoo.net/" target="_blank" class="_">(Lab) Hands-on Learners</a>
 * D3 Tutorial videos
-	* Text Learners: https://square.github.io/intro-to-d3/
-	* Video Learners: https://www.youtube.com/watch?v=8jvoTV54nXw
+	* <a href="https://square.github.io/intro-to-d3/" target="_blank" class="_">Text Learners</a>
+        * <a href="https://www.youtube.com/watch?v=8jvoTV54nXw" target="_blank" class="_">Video Learners</a>
+
 
 ## The Assignment (Part 1) - Getting Started
 
@@ -43,7 +44,7 @@ The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) 
 
 To install pgadmin:
 
-[MacOSX](http://macappstore.org/pgadmin3/)
+<a href="http://macappstore.org/pgadmin3/" target="_blank" class="_">MacOSX</a>
 
 Linux:
 sudo apt-get install postgresql pgadmin3
