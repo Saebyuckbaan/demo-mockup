@@ -36,7 +36,7 @@ The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) 
 
 ### Diving into D3
 
-For this section of the assignment you will be creating a basic bar chart from scratch. The only file you will need to modify is ``index.js``. When you load the application for the first-time there is already an example of a bar chart created using D3. However, there are somethings that are wrong with it -- the chart is upside down, the x and y axis are nonexistent, etc. Your job will be to implement the **TODO** sections of code, fix any errors, and incorporate the given taco data.
+For this section of the assignment you will be creating a basic bar chart from scratch. The only file you will need to modify is ``public/js/index.js``. When you load the application for the first-time there is already an example of a bar chart created using D3. However, there are somethings that are wrong with it -- the chart is upside down, the x and y axis are nonexistent, etc. Your job will be to implement the **TODO** sections of code, fix any errors, and incorporate the given taco data.
 
 1. **Margin Conventions**
 	*  You won't need to do any coding for this step, we just want to introduce you to how the D3 layout is set up. The first thing you'll notice at the top of the file are these abitrary values for margins are sizing. Take a look at <a href="http://bl.ocks.org/mbostock/3019563" target="_blank" class="_">D3 margin conventions</a>  for more information on how the canvas is structured with D3. The key thing to note is that your starting point for drawing SVGs is at (0,0) -- the top-left corner of the application with X growing towards the right, and Y growing downwards.
@@ -155,7 +155,7 @@ Now that you're familiar with creating basic D3 visualizations, it's time to inc
 	* **Query:** In the year 2003,  retrieve the total number of respondents for each gender from the Smoking Prevalence in Adults table from 1984-2013.
 
 5. **Visualize that data using D3** 
-	* Now that you have retrieved the data from the DELPHI database. In your ``index.js``, locate the AJAX call ``$.get( "/delphidata")``. Your task is to fill this method in and create a basic bar chart with **Gender** on the X-axis and **Total Respondents** on the Y-axis.
+	* Now that you have retrieved the data from the DELPHI database. In your ``public/js/index.js``, locate the AJAX call ``$.get( "/delphidata")``. Your task is to fill this method in and create a basic bar chart with **Gender** on the X-axis and **Total Respondents** on the Y-axis.
 6. **End Result**
 	* Your end result should look similar to this:
 
