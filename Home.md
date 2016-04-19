@@ -139,6 +139,22 @@ For this section of the assignment you will be creating a basic bar chart from s
 
 ![End Result](https://cloud.githubusercontent.com/assets/5565596/14638829/2923003c-05ee-11e6-8d05-4894391b988f.png)
 
+### Diving into SQL
+Now that you're familiar with creating basic D3 visualizations, it's time to incorporate data from a SQL database.
+
+1.    Create a .env file to properly connect to the DELPHI database database. After doing this step, you should no longer receiver see ``Error: ENOENT...`` in your Node console. 
+2. On the side, connect to the DELPHI database using PGAdmin (or any instance of a Postgres driver) and find the 'Smoking Prevalence in Adults' and familiarize yourself with the table schema.
+3. . In ``server.js``  take a look at ``app.get('/delphidata')``. This is where you want to connect to the DELPHI database using [node-postgres](https://github.com/brianc/node-postgres). Now using ``node-postgres``, create a SQL query to get the results of this query:
+```
+In the year 2003,  retrieve the total number of respondents for each gender from the Smoking Prevalence in Adults table from 1984-2013.
+```
+5. **Visualize that data using D3** 
+	* Now that you have retrieved the data from the DELPHI database. In your ``index.js``, locate the AJAX call ``$.get( "/delphidata")``. Your task is to fill this method in and create a basic bar chart with **Gender** on the X-axis and **Total Respondents** on the Y-axis.
+6. **End Result**
+	* Your end result should look similar to this:
+
+![End Result](https://cloud.githubusercontent.com/assets/5565596/14653067/1cdf2a06-062c-11e6-9d47-f65e9163ff95.png)
+
 ## The Assignment (Part 2) - Putting Everything Together
 Now that you have learned to retrieve data using SQL and know how to make basic visualizations using D3, it’s time to tie these tools into your design. The main goal of this part of the assignment is to apply design-oriented strategy to tackle real problems with a data-driven approach. Unlike the previous assignment where your team chose a theme for your application, we are providing scenarios that you will choose from. That scenario will be the focus of your application. Keep in mind, these scenarios will be fairly broad, but your job is to choose **one specific aspect** of the problem and address that using the tools that you have learned throughout the course.
 
