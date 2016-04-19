@@ -84,6 +84,12 @@ For this section of the assignment you will be creating a basic bar chart from s
 1. **Margin Conventions**
 	*  You won't need to do any coding for this step, we just want to introduce you to how the D3 layout is set up. The first thing you'll notice at the top of the file are these abitrary values for margins are sizing. Take a look at [D3 margin conventions](http://bl.ocks.org/mbostock/3019563) for more information on how the canvas is structured with D3. The key thing to note is that your starting point for drawing SVGs is at (0,0) -- the top-left corner of the application with X growing towards the right, and Y growing downwards.
 
+    ```
+      var margin = {top: 20, right: 10, bottom: 100, left: 40},
+      width = 960 - margin.right - margin.left,
+      height = 500 - margin.top - margin.bottom;
+    ```
+
 2. **Defining the Chart**
 	* In this step you also won't need to do any coding. In this step we are defining an SVG element which will be the canvas for the bar chart. The width and height attributes determine how large the SVG element will be on the screen. To avoid having the canvas crammed in the corner of the screen we move the canvas by translating it according to the defined margins.
 	
