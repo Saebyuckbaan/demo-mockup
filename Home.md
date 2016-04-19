@@ -145,7 +145,7 @@ Now that you're familiar with creating basic D3 visualizations, it's time to inc
 1.    Create a .env file to properly connect to the DELPHI database database. After doing this step, you should no longer receiver see ``Error: ENOENT...`` in your Node console. 
 2. On the side, connect to the DELPHI database using PGAdmin (or any instance of a Postgres driver) and find the 'Smoking Prevalence in Adults' and familiarize yourself with the table schema.
 3. In ``server.js``  take a look at ``app.get('/delphidata')``. This is where you want to connect to the DELPHI database using [node-postgres](https://github.com/brianc/node-postgres). Now using ``node-postgres``, create a SQL query to get the results of this query:
-        * In the year 2003,  retrieve the total number of respondents for each gender from the Smoking Prevalence in Adults table from 1984-2013.
+	* **Query:** In the year 2003,  retrieve the total number of respondents for each gender from the Smoking Prevalence in Adults table from 1984-2013.
 
 5. **Visualize that data using D3** 
 	* Now that you have retrieved the data from the DELPHI database. In your ``index.js``, locate the AJAX call ``$.get( "/delphidata")``. Your task is to fill this method in and create a basic bar chart with **Gender** on the X-axis and **Total Respondents** on the Y-axis.
