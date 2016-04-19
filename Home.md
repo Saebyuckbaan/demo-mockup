@@ -97,11 +97,13 @@ This exercise is completely optional and is for your own learning. Many toolkits
 
 ``d3.json(requestURL, callback)``
 
-1.	Clone [World Happiness Report 2016](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2/tree/master/World-Happiness-Report-2016). The data values are just a set of random numbers but let’s make the assumption that the data represents a measure of ‘happiness’ (range 0-10) for 20 unspecified countries.
+1. This part of the assignment be solely in the ``/World-Happiness-Report-2016`` folder. You will need to modify ``index.html`` reflect any changes you want to update in the section of the assignment. 
 
-2.	For the first part of the assignment, we want to visualize the actual ‘happiness’ data. (Yes, that exists.) You can obtain this data from the [World Happiness Data Report](http://worldhappiness.report/wp-content/uploads/sites/2/2016/03/HR-V1Ch2_web.pdf) (Pages 13-15 in PDF). The World Happiness Report is a measure of happiness published by the United Nations Sustainable Development Solutions Network. _Notice the document is a PDF._ You will have to get creative with data extraction. Although Wikipedia has this data as well, the point of this exercise is to appreciate how physical data is transcribed, processed and exchanged digitally.
+2. The data values in ``index.html`` are just a set of random numbers but let’s make the assumption that the data represents a measure of ‘happiness’ (range 0-10) for 20 unspecified countries.
 
-3.	Make a bar chart with all 157 countries  listed in the report. Please put the country on the x-axis and the Happiness value (1-10) on y-axis. **Take a screenshot of your result.** For a bonus exercise find the average happiness index of each of the 6 continents—excluding Antarctica and indicate it on the chart. Not too bad right? Now you know how to pass any data to D3.
+3. For the first part of the assignment, we want to visualize the actual ‘happiness’ data. (Yes, that exists.) You can obtain this data from the [World Happiness Data Report](http://worldhappiness.report/wp-content/uploads/sites/2/2016/03/HR-V1Ch2_web.pdf) (Pages 13-15 in PDF). The World Happiness Report is a measure of happiness published by the United Nations Sustainable Development Solutions Network. **Notice the document is a PDF.** You will have to get creative with data extraction. Although Wikipedia has this data as well, the point of this exercise is to appreciate how physical data is transcribed, processed and exchanged digitally.
+
+4. Make a **bar chart using D3**  with all 157 countries  listed in the report. Please put the country on the x-axis and the Happiness value (1-10) on y-axis. **Take a screenshot of your result.** For a bonus exercise find the average happiness index of each of the 6 continents—excluding Antarctica and indicate it on the chart. Not too bad right? Now you know how to pass any data to D3.
 
 ##Part 1B: SQL 
 
