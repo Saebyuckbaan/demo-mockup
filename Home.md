@@ -20,8 +20,7 @@ To help get started we have provided some resources to help you brush up on the 
 * Tutorial videos for SQL
 	* Text Learners: <a href="http://www.w3schools.com/sql/" target="_blank" class="_">http://www.w3schools.com/sql/</a>
 	* Video Learners: <a href="https://www.youtube.com/watch?v=7Vtl2WggqOg" target="_blank" class="_">https://www.youtube.com/watch?v=7Vtl2WggqOg</a>
-	* (Lab) Hands-on Learners: <a href="http://sqlzoo.net/" target="_blank" class="_">http://sqlzoo.net/</a>
-<a href="http://stackoverflow.com/questions/27637609/understanding-passport-serialize-deserialize" target="_blank">this stackoverflow question<a/>
+	* <a href="http://sqlzoo.net/" target="_blank" class="_">(Lab) Hands-on Learners: </a>
 * D3 Tutorial videos
 	* Text Learners: https://square.github.io/intro-to-d3/
 	* Video Learners: https://www.youtube.com/watch?v=8jvoTV54nXw
