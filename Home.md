@@ -39,7 +39,7 @@ The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) 
 For this section of the assignment you will be creating a basic bar chart from scratch. The only file you will need to modify is ``index.js``. When you load the application for the first-time there is already an example of a bar chart created using D3. However, there are somethings that are wrong with it -- the chart is upside down, the x and y axis are nonexistent, etc. Your job will be to implement the **TODO** sections of code, fix any errors, and incorporate the given taco data.
 
 1. **Margin Conventions**
-	*  You won't need to do any coding for this step, we just want to introduce you to how the D3 layout is set up. The first thing you'll notice at the top of the file are these abitrary values for margins are sizing. Take a look at [D3 margin conventions](http://bl.ocks.org/mbostock/3019563) for more information on how the canvas is structured with D3. The key thing to note is that your starting point for drawing SVGs is at (0,0) -- the top-left corner of the application with X growing towards the right, and Y growing downwards.
+	*  You won't need to do any coding for this step, we just want to introduce you to how the D3 layout is set up. The first thing you'll notice at the top of the file are these abitrary values for margins are sizing. Take a look at <a href="http://bl.ocks.org/mbostock/3019563" target="_blank" class="_">D3 margin conventions</a>  for more information on how the canvas is structured with D3. The key thing to note is that your starting point for drawing SVGs is at (0,0) -- the top-left corner of the application with X growing towards the right, and Y growing downwards.
 
     ```
       var margin = {top: 20, right: 10, bottom: 100, left: 40},
@@ -76,7 +76,7 @@ For this section of the assignment you will be creating a basic bar chart from s
     });
     ```
   1. Notice that the chart doesn't actually use the taco dataset given. Replace the ``[10, 20, 30, 40]`` array with the taco dataset. 
-  2. Define the width and height attributes to actually use the values from the dataset. To accomplish this, you must first fix the ``xScale`` and ``yScale`` functions. If you're unfamiliar the D3 scales please read more about it [here](https://github.com/mbostock/d3/wiki/Scales).
+  2. Define the width and height attributes to actually use the values from the dataset. To accomplish this, you must first fix the ``xScale`` and ``yScale`` functions. If you're unfamiliar the D3 scales please read more about it <a href="https://github.com/mbostock/d3/wiki/Scales" target="_blank" class="_">here</a>.
   3. After fixing the scales, update x and y position attributes in a similar fashion so that the graph is no longer upside-down.
   4. Add spacing between the bars on your chart If they aren't present. You may want to revisit the ``xScale`` function.
 
