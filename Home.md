@@ -175,22 +175,22 @@ Now that you have learned to retrieve data using SQL and know how to make basic 
     3. **AirBnB Rentals** Design a tool to help AirBnB customers find the best renting deals in San Diego.
     4. **Housing Deals** Help real estate agents analyze housing rates and get the most profit through selling housing property around San Diego.
 
-2. Choose one aspect of the problem that you could address in an intuitive way using data visualization. You shouldn’t try to address the whole scenario, rather your goal is to make that specific aspect as well-refined as possible. Think about the problem and brainstorm what visualization would be most applicable to remedy the issue. Your visualizations should not be overly complex, it should a clear focus that users could easily pick up.
+2. Choose one aspect of the problem that you could address in an intuitive way using data visualization. You shouldn’t try to address the whole scenario, rather your goal is to make that specific aspect as well-refined as possible. Think about the problem and brainstorm what visualization would be most applicable to remedy the issue. Your visualizations should not be overly complex, it should have a clear focus that users could easily pick up.
 
-3. (Optional/Extra Credit) Incorporate one more dataset into your application that is NOT found in the DELPHI database. You can incorporate this dataset by either integrating it into your current visualization, or creating a new visualization that is intuitive. Which ever you choose, you must use it in a meaningful way to receive credit.
+3. (Optional/Extra Credit) Incorporate one more dataset into your application that is NOT found in the DELPHI database. You can incorporate this dataset by either integrating it into your current visualization, or creating a new visualization that addresses the same problem (or another aspect of the scenario). Whichever you choose, you must design your visualizations in a meaningful way to receive credit.
 
 4. Apply each of the six design principles listed below in your application and document this in your README. Justify your decisions and show strong signifiers that the principles you mentioned in your README are indeed present.
-    1. Discoverability/Signifiers - Are users able to easily find the points of the application that they are interested in?
-    2. Learnability - Are users able to easily learn and remember how to interact with your application? 
-    3. Feedback - Is there strong evidence of user feedback for actionable items?
-    4. Natural Mapping/Mental Metaphors - Is there strong evidence of providing natural mappings or relatable metaphors that help the user navigate the application?
-    5. Constraints - Does the application have deliberate constraints to guide the flow of user interaction?
-    6. Error Prevention/Recovery - Is there strong evidence of error prevention and error recovery so that the user won’t be left confused when something unexpected happens?
+    1. **Discoverability/Signifiers** - Are users able to easily find the points of the application that they are interested in?
+    2. **Learnability** - Are users able to easily learn and remember how to interact with your application? 
+    3. **Feedback** - Is there strong evidence of user feedback for actionable items?
+    4. **Natural Mapping/Mental Metaphors** - Is there strong evidence of providing natural mappings or relatable metaphors that help the user navigate the application?
+    5. **Constraints** - Does the application have deliberate constraints to guide the flow of user interaction?
+    6. **Error Prevention/Recovery** - Is there strong evidence of error prevention and error recovery so that the user won’t be left confused when something unexpected happens?
 
-5. Justify your design decisions. Decisions you make as a designer should have a purpose. If you used any external CSS/JS libraries (ie. Boostrap, Materialize) analyze what motivated your team to do so and describe how it fits into your design goals. If you implemented any custom CSS/JS components explain why decision was appropriate and how did decision fit into your design. Document all of this in your README. If your team has justified all the tech choices then you'll receive 1 point for completion. If not, or if your justification is not thoroughly thought out, then your team will receive no points for this section.
+5. Justify your design decisions. Decisions you make as a designer should have a purpose. If you used any external CSS/JS libraries (ie. Boostrap, Materialize) analyze what motivated your team to do so and describe how it fits into your design goals. If you implemented any custom CSS/JS components explain why this decision was appropriate and how did it fit into your design. Document all of this in the README. If your team has justified all the tech choices then you'll receive 1 point for completion. If not completed, or if your justification is not thoroughly thought out, then your team will receive no points for this section.
 
 6. Document the contribution of each group member
-    1. On your README, provide a brief documentation to show that each group member has contributed fair share of work for the assignment.
+    1. On the README, provide a brief documentation to show that each group member has contributed fair share of work for the assignment.
 
 7. Push to your code to GitHub and deploy it to Heroku.
 
@@ -200,9 +200,9 @@ This assignment is **out of 21 points**. It will be graded heavily on how well y
 
 Part 1 is focused on getting you familiar with new concepts and utilizing new tools, so it is not graded and does not need to be submitted. However, you will need to understand Part 1 to complete Part 2, so it is highly recommended that you complete Part 1 before starting on Part 2.
 
-Part 2 will first be graded to check if your team's utilization of Postgres and D3 is fully functional in your application. This will be graded on a binary scale — you receive points upon completion if working without errors. The majority of Part 2 will be graded on application and execution of the design principles mentioned. You can receive a maximum of 2 points for each criteria, which totals up to a maximum of 12 points cumulative for the this section. If your application shows no evidence or mis-use of a principle, then you will receive 0 points for that criteria. Likewise, if there is some evidence that your team as attempted to address a criteria, then you will receive 1 point.
+Part 2 will first be graded to check if your team's utilization of Postgres and D3 is fully functional in your application. This will be graded on a binary scale — you receive points upon completion if working without errors. The majority of Part 2 will be graded on application and execution of the design principles mentioned. You can receive a maximum of 2 points for each criteria, which totals up to a maximum of 12 points cumulative for this section. If your application shows no evidence or mis-use of a principle, then you will receive 0 points for that criteria. Likewise, if there is some evidence that your team as attempted to address a criteria, then you will receive 1 point.
 
-Extra Credit: If your team incorporates another data set outside from the DELPHI database, and utilizes it in a meaningful way in your application, then you will receive a maximum of 2 additional points. If time permits, it’s **highly** recommended that you attempt to this portion of the assignment as well.
+Extra Credit: If your team incorporates another data set outside from the DELPHI database, and utilizes it in a purposeful manner in your application, then you will receive a maximum of 2 additional points. If time permits, it’s **highly** recommended that you attempt to this portion of the assignment as well.
 
 * NOTE: This is not required. If your team having trouble finding another dataset to incorporate we have provided one below. The UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
 
