@@ -77,14 +77,49 @@ You will see
 
 From databases navigate to delpgibetadb. Please note that you should use (and only have access to) the tables found in 'cogs121_16_raw' and 'cogs121_16_integrated' schema.
 
-### The Actual Assignment
-Now that you have learned how to do AJAX request and have some understanding of how the DELPHI database is structured, you're ready to start using what you've learned to create a basic web application that visualizes this dataset.
+### Diving into D3
 
-1. Clone this repository. There will be some parts of the application that have errors or are unimplemented, it is your job to fix these errors and fill in the functions.
-2. Create a .env file to properly connect to the database.
-3. On the side, connect to the DELPHI database using PGAdmin (or any instance of a Postgres driver) and find the 'Smoking Prevalance in Adults' and familiraze yourself with the table schema.
-4. In the main view of the application, there is a table has some attributes of this table (ie. Year, Gender, Percentage, Respondents). **It's your job to extract this information from the database in your web application and display this data using D3.**
-5. Your end result should look something like this: (TODO Add screenshot)
+For this section of the assignment you will be creating a basic bar chart from scratch. The only file you will need to modify is ``index.js``. When you load the application for the first-time there is already an example of a bar chart created using D3. However, there are somethings that are wrong with it -- the chart is upside down, the x and y axis are nonexistent, etc. Your job will be to implement the **TODO** sections of code, fix any errors, and incorporate the given taco data.
+
+1. **Margin Conventions**
+	*  You won't need to do any coding for this step, we just want to introduce you to how the D3 layout is set up. The first thing you'll notice at the top of the file are these abitrary values for margins are sizing. Take a look at [D3 margin conventions](http://bl.ocks.org/mbostock/3019563) for more information on how the canvas is structured with D3. The key thing to note is that your starting point for drawing SVGs is at (0,0) -- the top-left corner of the application with X growing towards the right, and Y growing downwards.
+
+2. **Defining the Chart**
+	* In this step you also won't need to do any coding. In this step we are defining an SVG element which will be the canvas for the bar chart. The width and height attributes determine how large the SVG element will be on the screen. To avoid having the canvas crammed in the corner of the screen we move the canvas by translating it according to the defined margins.
+	
+    ```
+     var chart = d3
+              .select(".chart")
+              .append("svg")
+              .attr("width", width + margin.right + margin.left)
+              .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+              .attr("transform", "translate(" +  margin.left + "," + margin.right + ")");
+    ```
+         
+3. **Drawing the Chart** 
+	*  In this step you will be consuming data and properly rendering it to the chart. 
+	
+    ```
+    chart
+	    .selectAll(".bar")
+	    .data([10, 20, 30, 40])
+	    .enter().append("rect")
+	    .attr("class", "bar")
+	    .attr("x", function(d, i) { return i*100; })
+	    .attr("width", 100)
+	    .attr("y", function(d) { return 0; })
+	    .attr("height", function(d) { return d*10; });
+    });
+    ```
+  1. Notice that the chart doesn't actually use the taco dataset given. Replace the ``[10, 20, 30, 40]`` array with the taco dataset. 
+  2. Define the width and height attributes to actually use the values from the dataset. To accomplish this, you must first fix the ``xScale`` and ``yScale`` functions. If you're unfamiliar the D3 scales please read more about it [here](https://github.com/mbostock/d3/wiki/Scales).
+  3. After fixing the scales, update x and y position attributes in a similar fashion so that the graph is no longer upside-down.
+  4. Add spacing between the bars on your chart If they aren't present. You may want to revisit the ``xScale`` function.
+
+4. **Labeling the X and Y Axis** 
+  1. For the last step you are required to draw and x and y axis to hold the bar charts.
+  2. If your names on the x-axis are being overlapped, rotate the text so that it no longer touches the other labels.
 
 ## The Assignment (Part 2) - Putting Everything Together
 Now that you have learned to retrieve data using SQL and know how to make basic visualizations using D3, it’s time to tie these tools into your design. The main goal of this part of the assignment is to apply design-oriented strategy to tackle real problems with a data-driven approach. Unlike the previous assignment where your team chose a theme for your application, we are providing scenarios that you will choose from. That scenario will be the focus of your application. Keep in mind, these scenarios will be fairly broad, but your job is to choose **one specific aspect** of the problem and address that using the tools that you have learned throughout the course.
