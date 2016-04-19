@@ -47,43 +47,6 @@ This simple exercise will illustrate how to use `d3.xhr ()`  to retrieve a dat
 2.	For the first part of the assignment, we want to visualize the actual ‘happiness’ data. (Yes, that exists.) You can obtain this data from the [World Happiness Data Report](http://worldhappiness.report/wp-content/uploads/sites/2/2016/03/HR-V1Ch2_web.pdf) (Pages 13-15 in PDF). The World Happiness Report is a measure of happiness published by the United Nations Sustainable Development Solutions Network. _Notice the document is a PDF._ You will have to get creative with data extraction. Although Wikipedia has this data as well, the point of this exercise is to appreciate how physical data is transcribed, processed and exchanged digitally.
 3.	Make a bar chart with all 157 countries  listed in the report. Please put the country on the x-axis and the Happiness value (1-10) on y-axis. **Take a screenshot of your result.** For a bonus exercise find the average happiness index of each of the 6 continents—excluding Antarctica and indicate it on the chart. Not too bad right? Now you know how to pass any data to d3!!!
 
-### Connecting to DELPHI database Using pgAdmin
-
-To install pgadmin:
-
-<a href="http://macappstore.org/pgadmin3/" target="_blank" class="_">MacOSX</a>
-
-Linux:
-sudo apt-get install postgresql pgadmin3
-
-Launch ‘pgAdmin’ by typing `pgadmin3` in terminal
-Then you should connect to remote server using connect button. You will see the window.
-
->name: DELPHI database 
-
->host: delphidata.ucsd.edu
-
->port: 5432
-
->username: cogs121_16_user
-
->password:  mcH8Yjs_n#2(xp
-
->Maintenance db: delphibetadb
-
-and then press OK. 
-It may show a warning. Simply press OK.
-
-Then in object browser in main window double-click "Server groups". It will expand to "servers". Then double-click "Servers". It will expand to DELPHI database. Expand the DELPHI database.
-
-You will see 
-* databases
-* tablespaces
-* group rules
-* login roles
-
-From databases navigate to delpgibetadb. Please note that you should use (and only have access to) the tables found in 'cogs121_16_raw' and 'cogs121_16_integrated' schema.
-
 ### Diving into D3
 
 For this section of the assignment you will be creating a basic bar chart from scratch. The only file you will need to modify is ``index.js``. When you load the application for the first-time there is already an example of a bar chart created using D3. However, there are somethings that are wrong with it -- the chart is upside down, the x and y axis are nonexistent, etc. Your job will be to implement the **TODO** sections of code, fix any errors, and incorporate the given taco data.
@@ -138,6 +101,43 @@ For this section of the assignment you will be creating a basic bar chart from s
 	* Your end result should look similar to this:
 
 ![End Result](https://cloud.githubusercontent.com/assets/5565596/14638829/2923003c-05ee-11e6-8d05-4894391b988f.png)
+
+### Connecting to DELPHI database Using pgAdmin
+
+To install pgadmin:
+
+<a href="http://macappstore.org/pgadmin3/" target="_blank" class="_">MacOSX</a>
+
+Linux:
+sudo apt-get install postgresql pgadmin3
+
+Launch ‘pgAdmin’ by typing `pgadmin3` in terminal
+Then you should connect to remote server using connect button. You will see the window.
+
+>name: DELPHI database 
+
+>host: delphidata.ucsd.edu
+
+>port: 5432
+
+>username: cogs121_16_user
+
+>password:  mcH8Yjs_n#2(xp
+
+>Maintenance db: delphibetadb
+
+and then press OK. 
+It may show a warning. Simply press OK.
+
+Then in object browser in main window double-click "Server groups". It will expand to "servers". Then double-click "Servers". It will expand to DELPHI database. Expand the DELPHI database.
+
+You will see 
+* databases
+* tablespaces
+* group rules
+* login roles
+
+From databases navigate to delpgibetadb. Please note that you should use (and only have access to) the tables found in 'cogs121_16_raw' and 'cogs121_16_integrated' schema.
 
 ### Diving into SQL
 Now that you're familiar with creating basic D3 visualizations, it's time to incorporate data from a SQL database.
