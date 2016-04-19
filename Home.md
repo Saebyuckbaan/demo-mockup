@@ -4,8 +4,8 @@
 The purpose of this assignment is to build off of previous assignments to tackle a particular problem space and devise a solution using the design principles that you have already learned. The main goals of this assignment are to learn the basics of SQL and integrate that data into a information visualization. Furthermore, the tools you’ll be required to use is data from the DELPHI database and finding a way to intuitively convey that data using D3.
 
 ## Notes
-* This assignment is intended to be done in a group.
-* The assignment may feel overwhelming, so **please start early** and collaborate with your group!
+* This assignment is intended to be done in your COGS 121 team as a group.
+* The assignment may feel overwhelming, so **please start early** and collaborate with your team!
 * Only Part 2 will be graded. However, since Part 1 provides guidances to Part 2, it is important that you complete Part 1 as well.
 * DO NOT PUSH OR SEND PULL REQUEST TO BOILERPLATE REPOSITORY
 
@@ -18,9 +18,9 @@ The purpose of this assignment is to build off of previous assignments to tackle
 To help get started we have provided some resources to help you brush up on the technologies we will be using in this assignment.
 
 * Tutorial videos for SQL
-	* Text Learners: http://www.w3schools.com/sql/
-	* Video Learners: https://www.youtube.com/watch?v=7Vtl2WggqOg
-	* (Lab) Hands-on Learners: http://sqlzoo.net/
+	* Text Learners: <a href="http://www.w3schools.com/sql/" target="_blank" class="_">http://www.w3schools.com/sql/</a>
+	* Video Learners: <a href="https://www.youtube.com/watch?v=7Vtl2WggqOg" target="_blank" class="_">https://www.youtube.com/watch?v=7Vtl2WggqOg</a>
+	* (Lab) Hands-on Learners: <a href="http://sqlzoo.net/" target="_blank" class="_">http://sqlzoo.net/</a>
 
 * D3 Tutorial videos
 	* Text Learners: https://square.github.io/intro-to-d3/
