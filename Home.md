@@ -30,22 +30,9 @@ To help get started we have provided some resources to help you brush up on the 
 
 This assignment contains an overview of several technologies that you can use in conjunction with D3 such as AJAX, HTML5, and NodeJS. The first part of the assignment shows you how to create webpages with D3 and AJAX and how to get dynamically generated data from a Postgres database. 
 
-Many toolkits are available to provide AJAX support and if you need this functionality in D3 there are some built-in functions that can be used to retrieve data from a URL. One method provides generic AJAX support and the second provides support for JSON data.
-
-``d3.xhr(requestURL, callback)``
-
-``d3.json(requestURL, callback)``
-
-
 The DELPHI (Data e-Platform to Leverage Multilevel Personal Health Information) database the PostgreSQL database you'll be using for Part 1 and Part 2 in this assignment.
 
-##Part 1A: 
-###D3 and AJAX requests
-This simple exercise will illustrate how to use `d3.xhr ()`  to retrieve a dataset for populating a bar chart. 
-
-1.	Clone [World Happiness Report 2016](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2/tree/master/World-Happiness-Report-2016). The data values are just a set of random numbers but let’s make the assumption that the data represents a measure of ‘happiness’ (range 0-10) for 20 unspecified countries.
-2.	For the first part of the assignment, we want to visualize the actual ‘happiness’ data. (Yes, that exists.) You can obtain this data from the [World Happiness Data Report](http://worldhappiness.report/wp-content/uploads/sites/2/2016/03/HR-V1Ch2_web.pdf) (Pages 13-15 in PDF). The World Happiness Report is a measure of happiness published by the United Nations Sustainable Development Solutions Network. _Notice the document is a PDF._ You will have to get creative with data extraction. Although Wikipedia has this data as well, the point of this exercise is to appreciate how physical data is transcribed, processed and exchanged digitally.
-3.	Make a bar chart with all 157 countries  listed in the report. Please put the country on the x-axis and the Happiness value (1-10) on y-axis. **Take a screenshot of your result.** For a bonus exercise find the average happiness index of each of the 6 continents—excluding Antarctica and indicate it on the chart. Not too bad right? Now you know how to pass any data to d3!!!
+##Part 1A: D3
 
 ### Diving into D3
 
@@ -102,6 +89,22 @@ For this section of the assignment you will be creating a basic bar chart from s
 
 ![End Result](https://cloud.githubusercontent.com/assets/5565596/14638829/2923003c-05ee-11e6-8d05-4894391b988f.png)
 
+
+### (Optional) World of Happiness Report
+This exercise is completely optional and is for your own learning. Many toolkits are available to provide AJAX support and if you need this functionality in D3 there are some built-in functions that can be used to retrieve data from a URL. One method provides generic AJAX support and the second provides support for JSON data.
+
+``d3.xhr(requestURL, callback)``
+
+``d3.json(requestURL, callback)``
+
+1.	Clone [World Happiness Report 2016](https://github.com/WeibelLab-Teaching/cogs121-sp16-ass2/tree/master/World-Happiness-Report-2016). The data values are just a set of random numbers but let’s make the assumption that the data represents a measure of ‘happiness’ (range 0-10) for 20 unspecified countries.
+
+2.	For the first part of the assignment, we want to visualize the actual ‘happiness’ data. (Yes, that exists.) You can obtain this data from the [World Happiness Data Report](http://worldhappiness.report/wp-content/uploads/sites/2/2016/03/HR-V1Ch2_web.pdf) (Pages 13-15 in PDF). The World Happiness Report is a measure of happiness published by the United Nations Sustainable Development Solutions Network. _Notice the document is a PDF._ You will have to get creative with data extraction. Although Wikipedia has this data as well, the point of this exercise is to appreciate how physical data is transcribed, processed and exchanged digitally.
+
+3.	Make a bar chart with all 157 countries  listed in the report. Please put the country on the x-axis and the Happiness value (1-10) on y-axis. **Take a screenshot of your result.** For a bonus exercise find the average happiness index of each of the 6 continents—excluding Antarctica and indicate it on the chart. Not too bad right? Now you know how to pass any data to D3.
+
+##Part 1B: SQL 
+
 ### Connecting to DELPHI database Using pgAdmin
 
 To install pgadmin:
@@ -120,9 +123,9 @@ Then you should connect to remote server using connect button. You will see the 
 
 >port: 5432
 
->username: cogs121_16_user
+>username: (See Piazza for Username)
 
->password:  mcH8Yjs_n#2(xp
+>password:  (See Piazza for Password)
 
 >Maintenance db: delphibetadb
 
@@ -197,7 +200,7 @@ Part 2 will first be graded to check if your team's utilization of Postgres and 
 
 Extra Credit: If your team incorporates another data set outside from the DELPHI database, and utilizes it in a meaningful way in your application, then you will receive a maximum of 2 additional points. If time permits, it’s **highly** recommended that you attempt to this portion of the assignment as well.
 
-* NOTE: This is not required. If your team having trouble finding another dataset to incorporate we have provided one below. The UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
+* NOTE: This is not required. If your team having trouble finding another dataset to incorporate we have provided one below. The UN's numerous databases, tables and glossaries containing over 60 million data points cover a wide range of themes including Agriculture, Crime, Education, Employment, Energy, Environment, Health, HIV/AIDS, Human Development, Industry, Information and Communication Technology, National Accounts, Population, Refugees, Tourism, Trade, as well as the Millennium Development Goals indicators.
 
 * You can login to the <a href="https://www.undata-api.org/" target="_blank">UN Data API<a/>
 
