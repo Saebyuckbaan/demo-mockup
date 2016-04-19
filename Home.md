@@ -4,7 +4,7 @@
 The purpose of this assignment is to build off of previous assignments to tackle a particular problem space and devise a solution using the design principles that you have already learned. The main goals of this assignment are to learn the basics of SQL and integrate that data into a information visualization. Furthermore, the tools you’ll be required to use is data from the DELPHI database and finding a way to intuitively convey that data using D3.
 
 ## Notes
-* This assignment is intended to be done in your COGS 121 team as a group.
+* This assignment is intended to be done in your assigned COGS 121 team.
 * The assignment may feel overwhelming, so **please start early** and collaborate with your team!
 * Only Part 2 will be graded. However, since Part 1 provides guidances to Part 2, it is important that you complete Part 1 as well.
 * DO NOT PUSH OR SEND PULL REQUEST TO BOILERPLATE REPOSITORY
