@@ -81,7 +81,7 @@ For this section of the assignment you will be creating a basic bar chart from s
   4. Add spacing between the bars on your chart If they aren't present. You may want to revisit the ``xScale`` function.
 
 4. **Labeling the X and Y Axis** 
-  1. For the last step you are required to draw and x and y axis to hold the bar charts.
+  1. For the last step you are required to draw an x and y axis to hold the bar charts.
   2. If your names on the x-axis are being overlapped, rotate the text so that it no longer touches the other labels.
 
 5. **End Result**
