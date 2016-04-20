@@ -154,7 +154,7 @@ Now that you're familiar with creating basic D3 visualizations, it's time to inc
 6. **End Result**
 	* Your end result should look similar to this:
 
-![End Result](https://cloud.githubusercontent.com/assets/5565596/14653067/1cdf2a06-062c-11e6-9d47-f65e9163ff95.png)
+![End Result](https://cloud.githubusercontent.com/assets/5565596/14689949/75de1b6c-06fe-11e6-8c40-9bca46ba2a0f.png)
 
 ## The Assignment (Part 2) - Putting Everything Together
 Now that you have learned to retrieve data using SQL and know how to make basic visualizations using D3, it’s time to tie these tools into your design. The main goal of this part of the assignment is to apply design-oriented strategy to tackle real problems with a data-driven approach. Unlike the previous assignment where your team chose a theme for your application, we are providing scenarios that you will choose from. That scenario will be the focus of your application. Keep in mind, these scenarios will be fairly broad, but your job is to choose **one specific aspect** of the problem and address that using the tools that you have learned throughout the course.
