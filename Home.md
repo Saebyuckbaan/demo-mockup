@@ -91,11 +91,7 @@ For this section of the assignment you will be creating a basic bar chart from s
 
 
 ### (Optional) World of Happiness Report
-This exercise is completely optional and is for your own learning. Many toolkits are available to provide AJAX support and if you need this functionality in D3 there are some built-in functions that can be used to retrieve data from a URL. One method provides generic AJAX support and the second provides support for JSON data.
-
-``d3.xhr(requestURL, callback)``
-
-``d3.json(requestURL, callback)``
+This exercise is completely optional and is for your own learning. The goal of this section will be to take extract relevant information from the World of Happiness Report and display that using D3. 
 
 1. This part of the assignment be solely in the ``/World-Happiness-Report-2016`` folder. You will need to modify ``index.html`` reflect any changes you want to update in the section of the assignment. 
 
