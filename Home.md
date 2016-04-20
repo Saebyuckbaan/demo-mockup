@@ -165,7 +165,7 @@ Now that you have learned to retrieve data using SQL and know how to make basic 
 
 ## The Assignment
 1. Choose one scenario for your application
-    1. **Uber/Lyft Drivers** Help Uber/Lyft drivers around San Diego get the most profit by helping them position themselves closer to high demand areas. Alternatively, help Uber/Lyft drivers be better able to people that are under the influence get home safely.
+    1. **Uber/Lyft Drivers** Help Uber/Lyft drivers around San Diego get the most profit by helping them position themselves closer to high demand areas. Alternatively, help Uber/Lyft drivers be in better positions to help people that are under the influence get home safely.
     2. **Patrolling San Diego** Design a tool to help law enforcement officers efficiently patrol areas that have high crime rates, or are not safe.
     3. **AirBnB Rentals** Design a tool to help AirBnB customers find the best renting deals in San Diego.
     4. **Housing Deals** Help real estate agents analyze housing rates and get the most profit through selling housing property around San Diego.
