@@ -150,7 +150,7 @@ Now that you're familiar with creating basic D3 visualizations, it's time to inc
 	* **Query:** In the year 2003,  retrieve the total number of respondents for each gender from the Smoking Prevalence in Adults table from 1984-2013.
 
 5. **Visualize that data using D3** 
-	* Now that you have retrieved the data from the DELPHI database. In your ``public/js/index.js``, locate the AJAX call ``d3.json("/delphidata")``. Your task is to fill this method in and create a basic bar chart with **Gender** on the X-axis and **Total Respondents** on the Y-axis.
+	* Now that you have retrieved the data from the DELPHI database. In your ``public/js/index.js``, locate the AJAX call ``d3.json("/delphidata")``. The ``/delphidata`` route should return a JSON of the data from the SQL query. Your task is to fill this method in and create a basic bar chart with **Gender** on the X-axis and **Total Respondents** on the Y-axis.
 6. **End Result**
 	* Your end result should look similar to this:
 
