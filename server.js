@@ -14,6 +14,14 @@ dotenv.load();
 
 //connect to database
 var conString = process.env.DATABASE_CONNECTION_URL;
+var client = new pg.Client(conString);
+client.connect(function(err) {
+    if (err) {
+        console.error('could not connect to postgres', err);
+    } else {
+        console.log("Successfully connected to postgres")
+    }
+});
 
 //Configures the Template engine
 app.engine('html', handlebars({ defaultLayout: 'layout', extname: '.html' }));
@@ -35,6 +43,9 @@ app.get('/', function(req, res){
 });
 
 app.get('/delphidata', function (req, res) {
+  client.query("SELECT gender, number_of_respondents FROM cogs121_16_raw.cdph_smoking_prevalence_in_adults_1984_2013 WHERE year = 2013 ORDER BY number_of_respondents ASC",function(err,dat){
+        res.json(dat.rows);
+    });
   // TODO
   // Connect to the DELPHI Database and return the proper information
   // that will be displayed on the D3 visualization
