@@ -3,22 +3,22 @@
 
 ##Design Principles
 1. Discoverability/Signifiers
-- TBA
+  - TBA
 
 2. Learnability
-- TBA
+  - TBA
 
 3. Feedback
-- TBA
+  - TBA
 
 4. Natural Mapping/Mental Metaphors
-- TBA
+  - TBA
 
 5. Constraints
-- TBA
+  - TBA
 
 6. Error Prevention/Recovery
-- TBA
+  - TBA
 
 
 ##Distribution of Work
