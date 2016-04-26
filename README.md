@@ -2,21 +2,21 @@
 #App Heroku URL:
 
 ##Design Principles
-i. Discoverability/Signifiers
-ii. Learnability
-iii. Feedback
-iv. Natural Mapping/Mental Metaphors
-v. Constraints
-vi. Error Prevention/Recovery
+1. Discoverability/Signifiers
+2. Learnability
+3. Feedback
+4. Natural Mapping/Mental Metaphors
+5. Constraints
+6. Error Prevention/Recovery
 
 ##Distribution of Work
 Davis Yi:
-  -
+- a
 Elaine Hu:
-  -
+- b
 Jose Paulo Gonzales:
-  -
+- c
 Yue Eunice Wong:
-  -
+- d
 Mustafa Khan:
-  -
+- e
