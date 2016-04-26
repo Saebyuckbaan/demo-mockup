@@ -1,6 +1,6 @@
 (function($) {
   "use strict";
-
+/*
 
   var data = [
     { name: "Lolita's", rating: 7.5 },
@@ -71,8 +71,7 @@
     .append("g")
     .attr("transform", "translate(0," + height +")")
     .call(xAxis)
-    /* This is selecting all "text" and give attributes 
-    */
+    // This is selecting all "text" and give attributes 
     .selectAll("text")
     .attr("dy", "2em")
     .attr("dx", "-2em")
@@ -146,8 +145,7 @@
       .append("g")
       .attr("transform", "translate(0," + height +")")
       .call(xAxis)
-      /* This is selecting all "text" and give attributes 
-      */
+      // This is selecting all "text" and give attributes 
       .selectAll("text")
       .attr("dy", "2em")
       .attr("dx", "-2em")
@@ -165,7 +163,7 @@
 
   //Call map to draw the map
   map();  
-
+*/
 
   
 
