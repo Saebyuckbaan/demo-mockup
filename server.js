@@ -42,17 +42,27 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
+app.get('/map', function(req, res){
+  res.render('map');
+});
+
 app.get('/delphidata', function (req, res) {
+  /*
   client.query("SELECT gender, number_of_respondents FROM cogs121_16_raw.cdph_smoking_prevalence_in_adults_1984_2013 WHERE year = 2013 ORDER BY number_of_respondents ASC",function(err,dat){
         res.json(dat.rows);
     });
+*/
+  client.query("SELECT \"Area\", \"Population\" FROM cogs121_16_raw.hhsa_san_diego_demographics_county_popul_by_age_2012_norm a WHERE \"Age\" = ( SELECT \"Age\" FROM cogs121_16_raw.hhsa_drink_driver_mot_vehicle_crashes_by_age_2010_2011 WHERE \"MVC Rate\" = ( SELECT MAX(\"MVC Rate\") FROM cogs121_16_raw.hhsa_drink_driver_mot_vehicle_crashes_by_age_2010_2011)) AND \"Population\" > ( SELECT AVG(\"Population\") FROM cogs121_16_raw.hhsa_san_diego_demographics_county_popul_by_age_2012_norm);",function(err,dat){
+        res.json(dat.rows);
+    });
+
   // TODO
   // Connect to the DELPHI Database and return the proper information
   // that will be displayed on the D3 visualization
   // Table: Smoking Prevalance in Adults
   // Task: In the year 2003, retrieve the total number of respondents
-  // for each gender. 
-  // Display that data using D3 with gender on the x-axis and 
+  // for each gender.
+  // Display that data using D3 with gender on the x-axis and
   // total respondents on the y-axis.
   return { delphidata: "No data present." }
 });
