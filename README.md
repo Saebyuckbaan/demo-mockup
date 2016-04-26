@@ -4,16 +4,22 @@
 ##Design Principles
 1. Discoverability/Signifiers
 - TBA
+
 2. Learnability
 - TBA
+
 3. Feedback
 - TBA
+
 4. Natural Mapping/Mental Metaphors
 - TBA
+
 5. Constraints
 - TBA
+
 6. Error Prevention/Recovery
 - TBA
+
 
 ##Distribution of Work
 Davis Yi:
