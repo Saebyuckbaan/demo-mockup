@@ -16,7 +16,7 @@
             "#225ea8","#253494","#081d58"]);
 
   // JSON-related
-  d3.json("https://raw.githubusercontent.com/leonlxli/Cogs121_P2_Uber/master/public/map/sdcounty.json",
+  d3.json("../json/zillowneighborhoodsca.geojson",
     function(error, json) {
       // if an error occurs, THROW AN ERROR
       if (error) {
@@ -60,8 +60,8 @@
               .data(json.features)
               .attr("d", path)
               .enter()
-              .append("svg:path")
-              .attr("d", path)
+              .append("svg:path"
+)              .attr("d", path)
               .style("fill", function(d) {
                 var val = d.properties.VALUE;
                 return color(val/41); // return "#000000"; for no data
