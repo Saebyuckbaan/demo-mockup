@@ -31,7 +31,7 @@
       var overlay = new google.maps.OverlayView();
 
       overlay.onAdd = function() {
-        var layer = d3.select(this.getPanes().overlayLayer).append("div")
+        var layer = d3.select(this.getPanes().overlayMouseTarget).append("div")
           .attr("class", "cities");
 
         var svg = layer.append("svg");
@@ -76,7 +76,7 @@
                 console.log("WHY");
                 d3.select(this)
                   .style("stroke", "black")
-                  .style("fill", "red");
+                  .style("fill", "#E57373");
               })
               .on("mouseout", function(d) {
                 console.log("Sigh.");
