@@ -154,9 +154,12 @@
               cities.selectAll("path")
                 .on("mouseover", function(d) {
                   //console.log("WHY");
+                  /*
                   d3.select(this)
                     .style("stroke", "black")
                     .style("fill", "#E57373");
+                    */
+
                 })
                 .on("mouseout", function(d) {
                   //console.log("Sigh.");
