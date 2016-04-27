@@ -85,6 +85,7 @@
             $.get("/vehicle_availability", function(data) {
 
                 // Represent the colors specturm of the data
+                // where between red and blue represent the availablity of the car
                 var colorPallete = 
                 ["#37cebc",
                 "#46c2b7",
@@ -111,6 +112,9 @@
                     dataArray.push(data[i]["no vehicle available"]);
                 }
 
+                // Linear scale to turn our car availability number into car
+                // find a different scale or get a large specturm of colors instead of 10
+                // possibly use 
                 var linearScale = d3.scale.linear();
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
                     linearScale.range(colorPallete);
@@ -133,13 +137,18 @@
                         return linearScale(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]]);
                     }
                     else {
-                        // Red represents counties nout in our dataset
+                        // Red represents counties not in our dataset
                         return "red";
                     }
                 })
                 .style("stroke", "blue")
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
+
+              // TODO 
+              // Need to modify the hover methods because they change the color of the counties
+              // from the original they were assign in the above function call. 
+
 
               // Changes color over hover; CURRENTLY NOT WORKING
               cities.selectAll("path")
