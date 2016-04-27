@@ -1,3 +1,40 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 700px;
+  height: 500px;
+  margin: auto;
+}
+
+.cities {
+  position: relative;
+  width: 500px;
+  height: 500px;           
+}
+        
+.cities svg {
+  position: absolute;
+  top: -4000px;
+  left: -4000px;
+  width: 8000px;
+  height: 8000px;        
+}
+        
+.cities path {
+  stroke-width: 1px;
+  fill-opacity: 0.5;
+}
+
+.cities path:hover {
+  fill: red;
+  fill-opacity: 1;
+}
+
 .chart {
   display: block;
   margin-left: auto;
