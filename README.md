@@ -21,7 +21,7 @@
   - TBA
 
 
-##Distribution of Work
+##Distribution of Work (I looked at Github's commit history for these, feel free to add stuff)
 Davis Yi:
 - Provided part 1a and 1b code in Github repository
 - Map Overlay maintenance
