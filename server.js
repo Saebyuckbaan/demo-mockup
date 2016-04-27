@@ -44,6 +44,7 @@ app.get('/', function(req, res){
 
 app.get('/delphidata', function (req, res) {
   client.query("SELECT gender, number_of_respondents FROM cogs121_16_raw.cdph_smoking_prevalence_in_adults_1984_2013 WHERE year = 2013 ORDER BY number_of_respondents ASC",function(err,dat){
+        client.end();
         res.json(dat.rows);
     });
   // TODO
