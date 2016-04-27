@@ -25,6 +25,8 @@
 Davis Yi:
 - Provided part 1a and 1b code in Github repository
 - Map Overlay maintenance
+- Implement pgSQL query on Node.js server
+- Find GEOJson file.
 
 Elaine Hu:
 - Found and connected GeoJSON file of SD county to D3
@@ -37,6 +39,8 @@ Yue Eunice Wong:
 - Got queries and data from DELPHI for part 2
 - Added UI and styling
 - Added DELPHI and PostGreSQL connections
+- Mining database to find suitable data tables to help for Uber/Lyft driver
+
 
 Mustafa Khan:
 - Connected GeoJSON file of SD county to D3
