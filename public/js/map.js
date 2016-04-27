@@ -1,6 +1,6 @@
 (function(d3) {
   "use strict";
-  
+
   // Google Map
   var map = new google.maps.Map(d3.select("#map").node(), {
     zoom: 9,
@@ -87,7 +87,7 @@
                     return color(val/41);
                   });
               });  // End Hover-related shenanigans
-            
+
           }; // END DRAW
 
       }; // END ON ADD
