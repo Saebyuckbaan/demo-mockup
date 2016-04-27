@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #ccccff;
 }
 
 #map {
@@ -43,4 +44,25 @@ html, body {
 
 .chart rect {
   fill: steelblue;
+}
+
+
+/* Style for Index */
+.jumbotron {
+  background-color: white;
+}
+.title{
+  text-align: center;
+  color: black;
+  font-size: 30pt;
+  font-weight:100;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.description {
+  text-align: center;
+  color: white;
+  font-size: 15pt;
+  font-weight: 100;
+
 }
