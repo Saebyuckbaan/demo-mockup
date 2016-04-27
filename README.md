@@ -24,20 +24,19 @@
 ##Distribution of Work
 Davis Yi:
 - Provided part 1a and 1b code in Github repository
-- x
+- Map Overlay maintenance
 
 Elaine Hu:
-- Connected GeoJSON file of SD county to D3
-- x
+- Found and connected GeoJSON file of SD county to D3
+- Added Google Map overlay
 
 Jose Paulo Gonzales:
 - Wrote README
-- x
 
 Yue Eunice Wong:
 - Got queries and data from DELPHI for part 2
-- x
+- Added UI and styling
+- Added DELPHI and PostGreSQL connections
 
 Mustafa Khan:
 - Connected GeoJSON file of SD county to D3
-- x
