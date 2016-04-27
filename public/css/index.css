@@ -3,7 +3,9 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ccccff;
+  position: relative;
+  font-family: 'Alegreya Sans', sans-serif; 
+  
 }
 
 #map {
@@ -49,20 +51,32 @@ html, body {
 
 /* Style for Index */
 .jumbotron {
-  background-color: white;
+  background-image: url("../image/cars.jpg");
+  height: 600px;
 }
 .title{
   text-align: center;
   color: black;
-  font-size: 30pt;
-  font-weight:100;
-  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 60pt;
+  font-weight: bolder;
+  font-family: 'Alegreya Sans', sans-serif; 
+  padding-top: 150px;
 }
 
-.description {
-  text-align: center;
-  color: white;
-  font-size: 15pt;
-  font-weight: 100;
+#map-section {
+  padding-top:50px;
+  height:750px;
+  color: black; 
+  background-color: #d1ccc9;
+}
 
+#section2 {
+  padding-top:50px;
+  height: 750px;
+  background-color: #AB9683;
+}
+
+.button {
+  max-width: 500px;
+  text-align: center;
 }
