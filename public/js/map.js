@@ -3,23 +3,23 @@
 
 
 
-  //vehicle_availability
-  d3.json("/vehicle_availability", function( err, data )
-  {
-    console.log ( data );
-  });
+  // //vehicle_availability
+  // d3.json("/vehicle_availability", function( err, data )
+  // {
+  //   console.log ( data );
+  // });
 
-  //sd college locations
-  d3.json("/sd_college_locations", function( err, data )
-  {
-    console.log ( data );
-  });
+  // //sd college locations
+  // d3.json("/sd_college_locations", function( err, data )
+  // {
+  //   console.log ( data );
+  // });
 
-  //transportation_usage in San Diego
-  d3.json("/transportation_usage", function( err, data )
-  {
-    console.log ( data );
-  });
+  // //transportation_usage in San Diego
+  // d3.json("/transportation_usage", function( err, data )
+  // {
+  //   console.log ( data );
+  // });
 
 
 
@@ -81,37 +81,86 @@
             }
 
             var path = d3.geo.path().projection(googleMapProjection);
-            cities.selectAll("path")
-              .data(json.features)
-              .attr("d", path)
-              .enter()
-              .append("svg:path"
-)              .attr("d", path)
-              .style("fill", function(d) {
-                var val = d.properties.VALUE;
-                return color(val/41); // return "#000000"; for no data
-              })
-              .style("stroke", "blue")
-              .append("title")
-              .text(function(d) {return d.properties.NAME;});
+            
+            $.get("/vehicle_availability", function(data) {
 
-            // Changes color over hover; CURRENTLY NOT WORKING
-            cities.selectAll("path")
-              .on("mouseover", function(d) {
-                //console.log("WHY");
-                d3.select(this)
-                  .style("stroke", "black")
-                  .style("fill", "#E57373");
-              })
-              .on("mouseout", function(d) {
-                //console.log("Sigh.");
-                d3.select(this)
-                  .style("stroke", "blue")
-                  .style("fill", function(d) {
-                    var val = d.properties.VALUE;
-                    return color(val/41);
-                  });
-              });  // End Hover-related shenanigans
+                // Represent the colors specturm of the data
+                var colorPallete = 
+                ["#37cebc",
+                "#46c2b7",
+                "#54b7b1",
+                "#63abac",
+                "#729fa7",
+                "#8093a2",
+                "#8f879d",
+                "#9e7c97",
+                "#ac7092",
+                "#bb648d",
+                "#ca5887",
+                "#d84d82",
+                "#e7417d"];
+
+                // Modify the data to our format, probably better to do it on the back end later
+                var newData = {};
+                // contain the array of our numbers of car total
+                var dataArray = [];
+
+                for (var i = 0; i < data.length; i++) {
+                    var propName = data[i].Area.toLowerCase();
+                    newData[propName] = data[i];
+                    dataArray.push(data[i]["no vehicle available"]);
+                }
+
+                var linearScale = d3.scale.linear();
+                    linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
+                    linearScale.range(colorPallete);
+
+
+              cities.selectAll("path")
+                .data(json.features)
+                .attr("d", path)
+                .enter()
+                .append("svg:path")
+                .attr("d", path)
+                .style("fill", function(d) {
+                    if (newData[d.properties.NAME.toLowerCase()]) {
+                        if (newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] > 6000) {
+                            // green represents counties in our set with extreme values
+                            return "green";
+                        }
+
+                        // generate a color spectrum which doesn't currently work yet. 
+                        return linearScale(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]]);
+                    }
+                    else {
+                        // Red represents counties nout in our dataset
+                        return "red";
+                    }
+                })
+                .style("stroke", "blue")
+                .append("title")
+                .text(function(d) {return d.properties.NAME;});
+
+              // Changes color over hover; CURRENTLY NOT WORKING
+              cities.selectAll("path")
+                .on("mouseover", function(d) {
+                  //console.log("WHY");
+                  d3.select(this)
+                    .style("stroke", "black")
+                    .style("fill", "#E57373");
+                })
+                .on("mouseout", function(d) {
+                  //console.log("Sigh.");
+                  d3.select(this)
+                    .style("stroke", "blue")
+                    .style("fill", function(d) {
+                      var val = d.properties.VALUE;
+                      return color(val/41);
+                    });
+                });  // End Hover-related shenanigans
+
+            });
+
 
           }; // END DRAW
 
