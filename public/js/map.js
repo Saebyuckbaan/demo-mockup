@@ -1,6 +1,31 @@
 (function(d3) {
   "use strict";
 
+
+
+  //vehicle_availability
+  d3.json("/vehicle_availability", function( err, data )
+  {
+    console.log ( data );
+  });
+
+  //sd college locations
+  d3.json("/sd_college_locations", function( err, data )
+  {
+    console.log ( data );
+  });
+
+  //transportation_usage in San Diego
+  d3.json("/transportation_usage", function( err, data )
+  {
+    console.log ( data );
+  });
+
+
+
+
+
+
   // Google Map
   var map = new google.maps.Map(d3.select("#map").node(), {
     zoom: 9,
@@ -43,7 +68,7 @@
           // to get NAME: var SDcityName = json.features[i].properties.NAME;
           var SDcity = json.features[i];
           json.features[i].properties.VALUE = i;
-          console.log(SDcity);
+          //console.log(SDcity);
         }
 
           overlay.draw = function() {
@@ -73,13 +98,13 @@
             // Changes color over hover; CURRENTLY NOT WORKING
             cities.selectAll("path")
               .on("mouseover", function(d) {
-                console.log("WHY");
+                //console.log("WHY");
                 d3.select(this)
                   .style("stroke", "black")
                   .style("fill", "#E57373");
               })
               .on("mouseout", function(d) {
-                console.log("Sigh.");
+                //console.log("Sigh.");
                 d3.select(this)
                   .style("stroke", "blue")
                   .style("fill", function(d) {
@@ -97,3 +122,4 @@
   );
 
 })(d3);
+
