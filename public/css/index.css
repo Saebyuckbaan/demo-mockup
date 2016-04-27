@@ -48,12 +48,15 @@ html, body {
 
 
 /* Style for Index */
+.jumbotron {
+  background-color: white;
+}
 .title{
   text-align: center;
-  color: white;
+  color: black;
   font-size: 30pt;
   font-weight:100;
-  font-family: 'Gabriela', serif;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 .description {
@@ -61,5 +64,5 @@ html, body {
   color: white;
   font-size: 15pt;
   font-weight: 100;
-  font-family: 'Gabriela', serif;
+
 }
