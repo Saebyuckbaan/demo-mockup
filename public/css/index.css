@@ -73,6 +73,10 @@ p {
   fill: #d8b0ff;
 }
 
+.graph {
+  text-align: center;
+  color: black;
+}
 
 /* Style for Index */
 .jumbotron {
@@ -103,7 +107,7 @@ p {
 
 #stat-section {
   padding-top:50px;
-  height: 900px;
+  height: 950px;
   background-color: #AB9683;
 }
 
