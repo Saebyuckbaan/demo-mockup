@@ -117,6 +117,14 @@
 
             var path = d3.geo.path().projection(googleMapProjection);
 
+            console.log("hello");
+            $.get("/max_vehicles", function(data) {
+              console.log("Area: " + data[0].Area);
+              console.log("Max: " + data[0].percent);
+              $(".data4").text(data[0].percent);
+              $(".data5").text(data[0].Area);
+            });
+
             $.get("/vehicle_availability", function(data) {
 
                 // Represent the colors specturm of the data
@@ -157,7 +165,7 @@
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
                     newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
-                    console.log(newData[propName]["ratio"]);
+                    //console.log(newData[propName]["ratio"]);
                     dataArray.push(data[i]["no vehicle available"]);
                     //console.log(dataArray[i]);
                 }
@@ -198,6 +206,8 @@
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
                     var percent = (newData[name]["no vehicle available"]) / (newData[name]["total households (occupied housing units)"]);
                     percent = percent * 100;
+                    percent = percent + "";
+                    percent = percent.slice(0,4);
                     percent = percent + "%";
                     $(".data > .data3").text(percent);
 
@@ -207,6 +217,7 @@
 
 
                 })
+                /*
                 .on("mouseout", function(d) {
                   $(".data > .label1").text("");
                   $(".data > .label2").text("");
@@ -216,6 +227,7 @@
                   $(".data > .data2").text("");
                   
                 });  // End Hover-related shenanigans
+*/
 
                 console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
 
@@ -230,3 +242,6 @@
   );
 
 })(d3);
+
+
+
