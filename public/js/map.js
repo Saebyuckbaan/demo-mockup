@@ -152,7 +152,7 @@
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
                     newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
-                    console.log(newData[propName]["ratio"]);
+                    //console.log(newData[propName]["ratio"]);
                     dataArray.push(data[i]["no vehicle available"]);
                     //console.log(dataArray[i]);
                 }
@@ -184,18 +184,23 @@
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
 
-              cities.append("g")
-                .attr("class", "legendL")
-                .attr("transform", "translate(20, 20)");
+                var legend = d3.select(".legend").append("svg")
+  .attr("class", "legend")
+  .attr("width", 50)
+  .attr("height", 30)
+  .selectAll("g")
+  .data(linearScale)
 
-              var legendLinear = d3.legend.color()
-                .shapeWidth(30)
-                .orient('horizontal')
-                .scale(linearScale);
+legend.append("rect")
+  .attr("width", 20)
+  .attr("height", 20)
+  .style("fill", function(d, i) { return color(i); });
 
-              cities.select(".legendL")
-                .call(legendLinear);
-
+legend.append("text")
+  .attr("x", 24)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .text(function(d) { return d.label; });
               // Changes color over hover; CURRENTLY NOT WORKING
               cities.selectAll("path")
                 .on("mouseover", function(d) {
@@ -226,7 +231,7 @@
 
                 });  // End Hover-related shenanigans
 
-                console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
+                //console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
 
             });
 
