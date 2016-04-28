@@ -52,7 +52,9 @@
   
 
   var margin = {top: 20, right: 10, bottom: 100, left: 40},
-      width = 1500 - margin.right - margin.left,
+      width = parseInt(d3.select('.chart').style('width'), 10),
+      width = width - margin.right - margin.left,
+      //height = parseInt(d3.select('.chart').style('height'), 10),
       height = 600 - margin.top - margin.bottom;
 
   var innerWidth  = width  - margin.left - margin.right;
