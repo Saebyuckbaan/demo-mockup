@@ -40,7 +40,7 @@ $('#divNewNotifications').on('click',"li", function( event ) {
     event.stopPropagation();
     event.stopImmediatePropagation();
     
-    var location = $(this).find('a').html()+"▼";
+    var location = $(this).find('a').html()+" ▼";
     $('#dropdown_title').html(location);
     $('.info').html($(this).find('a').html());
     //console.log( $(this).find('a').data('veh') + " " + $(this).find('a').data('total') );
@@ -53,10 +53,10 @@ $('#divNewNotifications').on('click',"li", function( event ) {
 
     var oldCSS = $(pathID).css("fill");
 
-    /*console.log(oldCSS);
+    console.log(oldCSS);
 
     $(pathID).css("fill-opacity", "1");
-    $(pathID).css("stroke-width", "3px");*/
+    $(pathID).css("stroke-width", "3px");
         
     // Closes dropdown menu manually
     $('.btn.dropdown-toggle').attr("aria-expanded", "false");
