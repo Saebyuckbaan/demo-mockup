@@ -2,16 +2,7 @@
   "use strict";
 
   $.get("/ranks", function(data2) {
-      /*
-      console.log("Area: " + data[0].Area);
-      console.log("Max: " + data[0].percent);
-      $(".data4").text( (Number(data[0].percent).toFixed(2)) + "%");
 
-      $(".data5").text(data[0].Area);
-      */
-      // Defining the margins and chart size
-  // See margin conventions for more information
-  
   
   var data =[];
   $.each ( data2, function ( index, value ) { 
@@ -21,35 +12,6 @@
   });
 
 
-/*
-  
-  var data = [
-    { area: data[0].Area, percent: data[0].percent },
-    { area: data[1].Area, percent: data[1].percent },
-    { area: data[2].Area, percent: data[2].percent },
-    { area: data[3].Area, percent: data[3].percent },
-    { area: data[4].Area, percent: data[4].percent },
-    { area: data[5].Area, percent: data[5].percent },
-    { area: data[6].Area, percent: data[6].percent },
-    { area: data[7].Area, percent: data[7].percent },
-    { area: data[8].Area, percent: data[8].percent },
-    { area: data[9].Area, percent: data[9].percent },
-    { area: data[10].Area, percent: data[10].percent },
-    { area: data[11].Area, percent: data[11].percent },
-    { area: data[12].Area, percent: data[12].percent },
-    { area: data[13].Area, percent: data[13].percent },
-    { area: data[14].Area, percent: data[14].percent },
-    { area: data[15].Area, percent: data[15].percent },
-    { area: data[16].Area, percent: data[16].percent },
-    // { area: data[17].Area, percent: data[17].percent },
-    // { area: data[18].Area, percent: data[18].percent },
-    // { area: data[19].Area, percent: data[19].percent },
-    // { area: data[20].Area, percent: data[20].percent },
-
-  ];
-  */
-  
-  
 
   var margin = {top: 20, right: 10, bottom: 100, left: 40},
       width = parseInt(d3.select('.chart').style('width'), 10),
@@ -84,6 +46,12 @@
   // TODO:
   // 1. Consume the taco data
   // 2. Update the x, y, width, and height attributes to appropriate reflect this
+  var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden");
+
   chart
     .selectAll(".bar")
     .data(data.map(function(d){ return d.percent; }))
@@ -93,13 +61,26 @@
     .attr("width", (innerWidth / data.length)-20)
     .attr("y", function(d) { return innerHeight - (innerHeight * (d/MaxRange)); })
     .attr("height", function(d) { return innerHeight * (d/MaxRange); })
-    .attr("fill", "teal");
+    .on('mouseover', function(d, i) {
+      return tooltip.style("visibility", "visible").text("Percent:" + d + "%");
+    })
+    .on('mouseout', function() {
+      return tooltip.style("visibility", "hidden");
+    })
+    .on("mousemove", function(){return tooltip.style("top",
+    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+    })
+    .on("click", function(d, i) {
+      console.log("d: " + d);
+      console.log("i: " + i);
+      d3.event.stopPropagation();
+  });
+
 
   // Orient the x and y axis
   var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
   var yAxis = d3.svg.axis().scale(yScale).orient("left");
   //console.log(yAxis);
-
   // TODO: Append X axis
   chart
     .append("g")

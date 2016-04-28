@@ -173,3 +173,19 @@ ul {
 .button2 {
   text-align: center;
 }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar:hover {
+  fill: #b30059;
+  cursor: pointer;
+}
+
+.x.axis path {
+  display: none;
+}
