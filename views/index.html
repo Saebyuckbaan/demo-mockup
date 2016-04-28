@@ -22,27 +22,7 @@
 
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" id="main-btn" href="#">ÜBERÜNO</a>
-          </div>
-          <div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li><a id="map-btn" href="#map-section">Map</a></li>
-                <li><a id="stat-btn" href="#stat-section">Statistic</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {{> navbar}}
 
       <div class="jumbotron" id="main-section">
         <div class="title">
@@ -102,11 +82,7 @@
 
             <div class="clearfix visible-sm-block"></div>
 
-            <div class = "col-sm-12 col-lg-7 col-md-6 col-md-offset-1">
-              <div id="map-wrap">
-                  <div id="map"></div>
-              </div>
-            </div>
+            {{> map}}
 
           </div> <!--row-->
 
@@ -121,7 +97,6 @@
           
             
      </div> <!--container-->
-
       <div id="stat-section" class="container-fluid">
         <div class="description">
           <h1>Where is the most profitable area in San Diego?</h1><br>
@@ -135,8 +110,6 @@
           <h1>Percentage of Households That Don't Have Vehicles in San Diego</h1>
           <div class="chart"></div>
         </div>
-
-        
       </div>
 
 

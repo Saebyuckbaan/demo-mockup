@@ -12,7 +12,6 @@
   });
 
 
-
   var margin = {top: 20, right: 10, bottom: 100, left: 40},
       width = parseInt(d3.select('.chart').style('width'), 10),
       width = width - margin.right - margin.left,
