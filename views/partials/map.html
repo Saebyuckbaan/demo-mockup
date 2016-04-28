@@ -1,5 +1,29 @@
 <div class = "col-sm-12 col-lg-7 col-md-6 col-md-offset-1">
   <div id="map-wrap">
+      <div id="legend">
+      	<button type="button" class="btn btn-info btn-xs" id="help" data-toggle="modal" data-target="#helpModal">?</button>
+      	<h6>From least ⟶ most prospective</h6>
+      	<div class="legendcolor" id="color1"></div>
+      	<div class="legendcolor" id="color2"></div>
+      	<div class="legendcolor" id="color3"></div>
+      	<div class="legendcolor" id="color4"></div>
+      	<div class="legendcolor" id="color5"></div>
+      	<div class="legendcolor" id="color6"></div>
+      	<div class="legendcolor" id="color7"></div>
+      	<div class="legendcolor" id="color8"></div>
+      	<div class="legendcolor" id="color9"></div>
+      </div>
       <div id="map"></div>
   </div>
 </div>
+
+<div id="helpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h6>Seems like a lot of people in San Diego county have access to at least one vehicle, but hey!&nbsp;&nbsp;Don't worry.&nbsp;&nbsp;We got you covered.&nbsp;&nbsp;Areas where people are more likely to be
+          	without a vehicle are darker, while areas where people have at least one car are lighter.</h6>
+        </div>
+      </div>
+    </div>
+  </div>
