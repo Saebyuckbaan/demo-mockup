@@ -198,6 +198,12 @@
 
                 })
                 .on("mouseout", function(d) {
+                  $(".data > .label1").text("");
+                  $(".data > .label2").text("");
+
+                  $(".data > .info").text("");
+                  $(".data > .data1").text("");
+                  $(".data > .data2").text("");
                   //console.log("Sigh.");
                   /*
                   Prevent the coloring by comment this part out
