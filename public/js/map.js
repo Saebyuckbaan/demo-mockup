@@ -61,7 +61,7 @@
     .attr("y", function(d) { return innerHeight - (innerHeight * (d/MaxRange)); })
     .attr("height", function(d) { return innerHeight * (d/MaxRange); })
     .on('mouseover', function(d, i) {
-      return tooltip.style("visibility", "visible").text("Percent:" + d + "%");
+      return tooltip.style("visibility", "visible").text("Percent: " + (Number(d).toFixed(2)) + "%");
     })
     .on('mouseout', function() {
       return tooltip.style("visibility", "hidden");
