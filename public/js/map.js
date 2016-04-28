@@ -24,15 +24,42 @@
 
 
 
-
+  var strictBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(32.492908, -117.710885),
+    new google.maps.LatLng(33.352841, -116.165932)
+  );
 
   // Google Map
   var map = new google.maps.Map(d3.select("#map").node(), {
-    zoom: 10,
-    minZoom: 6,
+    zoom: 9,
+    minZoom: 9,
+    maxZoom: 13,
+    mapTypeControl: false,
+    streetViewControl: false,
     center: new google.maps.LatLng(32.9185, -117.1382),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+
+  google.maps.event.addListener(map, 'dragend', function() {
+     if (strictBounds.contains(map.getCenter())) return;
+
+     // We're out of bounds - Move the map back within the bounds
+
+     var c = map.getCenter(),
+         x = c.lng(),
+         y = c.lat(),
+         maxX = strictBounds.getNorthEast().lng(),
+         maxY = strictBounds.getNorthEast().lat(),
+         minX = strictBounds.getSouthWest().lng(),
+         minY = strictBounds.getSouthWest().lat();
+
+     if (x < minX) x = minX;
+     if (x > maxX) x = maxX;
+     if (y < minY) y = minY;
+     if (y > maxY) y = maxY;
+
+     map.setCenter(new google.maps.LatLng(y, x));
+   });
 
   // Colors for the values; currently gives arbitrary colors
   var color = d3.scale.quantize()
@@ -81,12 +108,12 @@
             }
 
             var path = d3.geo.path().projection(googleMapProjection);
-            
+
             $.get("/vehicle_availability", function(data) {
 
                 // Represent the colors specturm of the data
                 // where between red and blue represent the availablity of the car
-                var colorPallete = 
+                var colorPallete =
                 ["#37cebc",
                 "#46c2b7",
                 "#54b7b1",
@@ -114,7 +141,7 @@
 
                 // Linear scale to turn our car availability number into car
                 // find a different scale or get a large specturm of colors instead of 10
-                // possibly use 
+                // possibly use
                 var linearScale = d3.scale.linear();
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
                     linearScale.range(colorPallete);
@@ -133,7 +160,7 @@
                             return "green";
                         }
 
-                        // generate a color spectrum which doesn't currently work yet. 
+                        // generate a color spectrum which doesn't currently work yet.
                         return linearScale(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]]);
                     }
                     else {
@@ -145,9 +172,9 @@
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
 
-              // TODO 
+              // TODO
               // Need to modify the hover methods because they change the color of the counties
-              // from the original they were assign in the above function call. 
+              // from the original they were assign in the above function call.
 
 
               // Changes color over hover; CURRENTLY NOT WORKING
@@ -176,9 +203,27 @@
 
             });
 
-
           }; // END DRAW
+          /*
+          var linear = d3.scale.linear()
+            .domain([0,10])
+            .range(["rgb(46, 73, 123)", "rgb(71, 187, 94)"]);
 
+          var svg = d3.select("svg");
+
+          svg.append("g")
+            .attr("class", "legendLinear")
+            .attr("transform", "translate(20,20)");
+
+          var legendLinear = d3.legend.color()
+            .shapeWidth(30)
+            .cells(10)
+            .orient('horizontal')
+            .scale(linear);
+
+          svg.select(".legendLinear")
+            .call(legendLinear);
+            */
       }; // END ON ADD
 
       overlay.setMap(map);
@@ -186,4 +231,3 @@
   );
 
 })(d3);
-
