@@ -37,7 +37,9 @@ function map ( ){
 
 $('#divNewNotifications').on('click',"li", function( event ) {
     event.preventDefault();
-
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    
     var location = $(this).find('a').html()+"▼";
     $('#dropdown_title').html(location);
     $('.info').html($(this).find('a').html());
