@@ -18,27 +18,7 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" id="main-btn" href="#">ÜBERÜNO</a>
-          </div>
-          <div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li><a id="map-btn" href="#map-section">Map</a></li>
-                <li><a id="stat-btn" href="#stat-section">Statistic</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {{> navbar}}
 
       <div class="jumbotron" id="main-section">
         <div class="title">
@@ -69,26 +49,26 @@
               <div class = "data shift">
                 <h1 class="info"></h1> <!--Location-->
                 <div class="row">
-                  <div class="col-sm-4">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
                     <h4>Number of Households Who Don't Have Vehicles Available</h5>
                   </div>
-                  <div class = "col-sm-4">
+                  <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
                     <h4>Total Households in the Area</h5>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
                     <h4>Percentage of Households That Don't Have Vehicles</h4>
                   </div>
                 </div>
 
                 <div class="row">
                   <hr align="left">
-                  <div class="col-sm-4 data">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 data">
                       <p class="data1"></p>
                   </div>
-                  <div class="col-sm-4 data">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 data">
                       <p class="data2"></p>
                   </div>
-                  <div class="col-sm-4 data">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 data">
                       <p class="data3"></p>
                   </div>
                 </div>
@@ -98,30 +78,28 @@
 
             <div class="clearfix visible-sm-block"></div>
 
-            <div class = "col-sm-12 col-lg-7 col-md-6 col-md-offset-1">
-              <div id="map-wrap">
-                  <div id="map"></div>
-              </div>
-            </div>
-            <div class="legend"></div>
+            {{> map}}
+
           </div> <!--row-->
           <div class="row">
             <div class="button2">
-              <a href="#section2" class="btn btn-lg active" role="button">So where should you go?</a>
+              <a href="#stat-section" class="btn btn-lg active" role="button">So where should you go?</a>
             </div>
           </div>
      </div> <!--container-->
-
       <div id="stat-section" class="container-fluid">
         <div class="description">
-          <h1>Statistics: Where is the most profitable area in San Diego?</h1><br>
+          <h1>Where is the most profitable area in San Diego?</h1><br>
           <h2>Location</h2>
           <p class="data5"></p>
           <br>
           <h2>Highest Percentage of Households That Don't Have Vehicles in San Diego</h2>
           <p class="data4"></p>
         </div>
-
+        <div class="graph">
+          <h1>Percentage of Households That Don't Have Vehicles in San Diego</h1>
+          <div class="chart"></div>
+        </div>
       </div>
 
 

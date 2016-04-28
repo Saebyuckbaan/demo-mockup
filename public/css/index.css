@@ -6,6 +6,7 @@ html, body {
   position: relative;
   /*font-family: 'Alegreya Sans', sans-serif; */
   font-family: 'Fjalla One', sans-serif;
+  background-color: black;
   
 }
 
@@ -24,7 +25,7 @@ p {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px )  {
+@media screen and (max-width: 992px )  {
   #map-section {
     padding-top:100px;
     color: black; 
@@ -69,9 +70,13 @@ p {
 }
 
 .chart rect {
-  fill: steelblue;
+  fill: #d8b0ff;
 }
 
+.graph {
+  text-align: center;
+  color: black;
+}
 
 /* Style for Index */
 .jumbotron {
@@ -102,13 +107,11 @@ p {
 
 #stat-section {
   padding-top:50px;
-  height: 750px;
   background-color: #AB9683;
 }
 
 
 .btn {
-  margin: 20px;
   background-color:#F0DAC7;
   border: 2px solid #fff;
   color: black;
@@ -126,6 +129,7 @@ p {
 }
 
 .scrollable-menu {
+  left: initial;
   height: auto;
   max-height: 180px;
   overflow-x: hidden;
@@ -167,4 +171,20 @@ ul {
 
 .button2 {
   text-align: center;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar:hover {
+  fill: #b30059;
+  cursor: pointer;
+}
+
+.x.axis path {
+  display: none;
 }
