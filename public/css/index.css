@@ -113,7 +113,6 @@ p {
 
 
 .btn {
-  margin: 20px;
   background-color:#F0DAC7;
   border: 2px solid #fff;
   color: black;
@@ -131,6 +130,7 @@ p {
 }
 
 .scrollable-menu {
+  left: initial;
   height: auto;
   max-height: 180px;
   overflow-x: hidden;
