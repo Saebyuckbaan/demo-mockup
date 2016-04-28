@@ -303,7 +303,7 @@
                 .append("svg:path")
                 .attr("d", path)
                 .attr("id", function(d) {
-                  return d.properties.NAME.toLowerCase().replace(/ /g, '');
+                  return (d.properties.NAME.toLowerCase().replace(/ /g, '') + "path");
                 })
                 .style("fill", function(d, i) {
                   return color(newData[d.properties.NAME.toLowerCase()]["ratio"]);
