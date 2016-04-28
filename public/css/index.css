@@ -73,6 +73,7 @@ html, body {
 .description {
   padding-left: 50px;
   padding-bottom: 50px;
+  color: black;
 }
 
 #map-section {

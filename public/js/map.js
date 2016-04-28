@@ -36,6 +36,7 @@
     maxZoom: 13,
     mapTypeControl: false,
     streetViewControl: false,
+    scrollwheel: false,
     center: new google.maps.LatLng(32.9185, -117.1382),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -117,7 +118,22 @@
 
             var path = d3.geo.path().projection(googleMapProjection);
 
+            console.log("hello");
+            $.get("/max_vehicles", function(data) {
+              console.log("Area: " + data[0].Area);
+              console.log("Max: " + data[0].percent);
+              $(".data4").text(data[0].percent);
+              $(".data5").text(data[0].Area);
+            });
+
             $.get("/vehicle_availability", function(data) {
+              // if you want to get into double .get Hell for both databases
+              /*
+              $.get("/transportation_usage", function(tranData) {
+                console.log(tranData);
+                console.log(data);
+              });
+              */
 
                 // Represent the colors specturm of the data
                 // where between red and blue represent the availablity of the car
@@ -147,13 +163,24 @@
                 var target = "no vehicle available";
 
                 var totals = "total households (occupied housing units)";
+                var percent;
 
                 for (var i = 0; i < data.length; i++) {
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
-                    newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
+                    newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals] ;
                     //console.log(newData[propName]["ratio"]);
+                    percent = ( (newData[propName]["ratio"]*100).toFixed(2) ) + "%";
                     dataArray.push(data[i]["no vehicle available"]);
+                    $("#divNewNotifications").append('<li>'+
+                                                      '<a class="dropdown-item" '+
+                                                      'data-veh="' + data[i][target] + '"' +
+                                                      'data-total="' + data[i][totals] + '"' +
+                                                      'data-ratio="' + percent + '"' +
+                                                      '>' +
+                                                      data[i]["Area"] +
+                                                      '</a>'+
+                                                      '</li>');
                     //console.log(dataArray[i]);
                 }
 
@@ -175,6 +202,9 @@
                 .enter()
                 .append("svg:path")
                 .attr("d", path)
+                .attr("id", function(d) {
+                  return d.properties.NAME.toLowerCase().replace(/ /g, '');
+                })
                 .style("fill", function(d, i) {
                   return color(newData[d.properties.NAME.toLowerCase()]["ratio"]);
                 })
@@ -206,30 +236,31 @@ legend.append("text")
                 .on("mouseover", function(d) {
                   var name = d.properties.NAME.toLowerCase();
                   if (newData[name]) {
+                    var percent = ( Number(newData[name].ratio) * 100 ).toFixed(2) + "%" ;
                     $(".data > .label1").text("Number of Households Who Don't Have Vehicles Available: ");
                     $(".data > .label2").text("Households Available: ");
-
                     $(".data > .info").text(newData[name].Area);
                     $(".data > .data1").text(newData[name]["no vehicle available"]);
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
                     var percent = (newData[name]["no vehicle available"]) / (newData[name]["total households (occupied housing units)"]);
                     percent = percent * 100;
+                    percent = percent + "";
+                    percent = percent.slice(0,4);
                     percent = percent + "%";
+
                     $(".data > .data3").text(percent);
-
-
-
                   }
                 })
+                /*
                 .on("mouseout", function(d) {
                   $(".data > .label1").text("");
                   $(".data > .label2").text("");
-
                   $(".data > .info").text("");
                   $(".data > .data1").text("");
                   $(".data > .data2").text("");
-
+                  $(".data > .data3").text("");
                 });  // End Hover-related shenanigans
+*/
 
                 //console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
 
