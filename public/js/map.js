@@ -166,6 +166,14 @@
                     newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
                     //console.log(newData[propName]["ratio"]);
                     dataArray.push(data[i]["no vehicle available"]);
+                    $("#divNewNotifications").append('<li>'+
+                                                      '<a class="dropdown-item" '+
+                                                      'data-veh="' + data[i][target] + '"' +
+                                                      'data-total="' + data[i][totals] + '"' +
+                                                      '>' +
+                                                      data[i]["Area"] +
+                                                      '</a>'+
+                                                      '</li>');
                     //console.log(dataArray[i]);
                 }
 
