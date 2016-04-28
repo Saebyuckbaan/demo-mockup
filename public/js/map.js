@@ -172,6 +172,7 @@
       "#253494",
       "#081d58",]);
 
+
   // JSON-related
   d3.json("../json/sdcounty.json",
     function(error, json) {
@@ -249,11 +250,6 @@
                 "#d84d82",
                 "#e7417d"];
 
-                /*var color = d3.scale.category20c();
-                var threshold = d3.scale.threshold()
-                  .domain([5, 1571, 3137, 4703, 6269, 7835, 9401, 10967])
-                  .range(color);*/
-
                 // Modify the data to our format, probably better to do it on the back end later
                 var newData = {};
                 // contain the array of our numbers of car total
@@ -270,7 +266,6 @@
                 for (var i = 0; i < data.length; i++) {
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
-
                     newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals] ;
                     //console.log(newData[propName]["ratio"]);
                     percent = ( (newData[propName]["ratio"]*100).toFixed(2) ) + "%";
@@ -292,6 +287,11 @@
                 // Linear scale to turn our car availability number into car
                 // find a different scale or get a large specturm of colors instead of 10
                 // possibly use
+                /*
+                var threshold = d3.scale.threshold()
+                  .domain(dataArray)
+                  .range(colorbrewer.RdBu[9]);
+                  */
                 var linearScale = d3.scale.linear();
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
                     linearScale.range(colorPallete);
@@ -330,8 +330,6 @@
 
                     $(".btn.dropdown-toggle").text(d.properties.NAME + " ▼");
                   }
-
-
                 })
                 /*
                 .on("mouseout", function(d) {
@@ -344,7 +342,7 @@
                 });  // End Hover-related shenanigans
 */
 
-                console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
+                //console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
 
             });
 
@@ -357,6 +355,3 @@
   );
 
 })(d3);
-
-
-
