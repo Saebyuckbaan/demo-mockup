@@ -31,7 +31,7 @@
 
   // Google Map
   var map = new google.maps.Map(d3.select("#map").node(), {
-    zoom: 11,
+    zoom: 9,
     minZoom: 9,
     maxZoom: 13,
     mapTypeControl: false,

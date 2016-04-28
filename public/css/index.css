@@ -56,13 +56,18 @@ html, body {
   height: 600px;
   margin:0;
 }
+
 .title {
   text-align: center;
   color: black;
-  font-size: 60pt;
+  font-size: 80pt;
   font-weight: bolder;
   font-family: 'Alegreya Sans', sans-serif; 
   padding-top: 150px;
+}
+
+#name {
+  font-size: 100pt;
 }
 
 .description {
@@ -93,7 +98,32 @@ html, body {
   font-weight:900;
 }
 
-
 .btn-group{
   padding-left:50px;
+}
+
+.dropdown-menu {
+  width: 400px !important;
+  height: 400px !important;
+  padding-left:50px;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 180px;
+  overflow-x: hidden;
+}
+.scrollable-menu::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;        
+}    
+.scrollable-menu::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: lightgray;
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.75);        
+} 
+
+ul
+{
+  list-style-type: none;
 }
