@@ -63,9 +63,17 @@
 
   // Colors for the values; currently gives arbitrary colors
   var color = d3.scale.quantize()
-    .range(["#ffffd9","#edf8b1","#c7e9b4",
-            "#7fcdbb","#41b6c4","#1d91c0",
-            "#225ea8","#253494","#081d58"]);
+    .domain([0, 0.1])
+    .range([
+      "#ffffd9",
+      "#edf8b1",
+      "#7fcdbb",
+      "#7fcdbb",
+      "#41b6c4",
+      "#1d91c0",
+      "#225ea8",
+      "#253494",
+      "#081d58",]);
 
   // JSON-related
   d3.json("../json/sdcounty.json",
@@ -128,17 +136,23 @@
                 "#d84d82",
                 "#e7417d"];
 
-                //var colorbrewer = require('colorbrewer');
-                //$('head').append('<link rel="stylesheet" href="css/colorbrewer.css" type="text/css" />');
-
                 // Modify the data to our format, probably better to do it on the back end later
                 var newData = {};
                 // contain the array of our numbers of car total
                 var dataArray = [];
 
+                var endData = "san diego county";
+
+                // We're interested in the number of people without transportation
+                var target = "no vehicle available";
+
+                var totals = "total households (occupied housing units)";
+
                 for (var i = 0; i < data.length; i++) {
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
+                    newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
+                    console.log(newData[propName]["ratio"]);
                     dataArray.push(data[i]["no vehicle available"]);
                     //console.log(dataArray[i]);
                 }
@@ -163,72 +177,20 @@
                 .append("svg:path")
                 .attr("d", path)
                 .style("fill", function(d, i) {
-                  //console.log(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
-                  return color( dataArray[i]);
+                  return color(newData[d.properties.NAME.toLowerCase()]["ratio"]);
                 })
                 .style("stroke", function(d, i){
-                  return color( dataArray[i]);
+                  return "#222";
                 })
-/*
-                    if (newData[d.properties.NAME.toLowerCase()]) {
-                        if (newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] > 6000) {
-                            // green represents counties in our set with extreme values
-
-                            return "green";
-                        }
-
-                        // generate a color spectrum which doesn't currently work yet.
-                        return linearScale(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]]);
-                    }
-                    else {
-                        // Red represents counties not in our dataset
-                        //console.log(d.properties.NAME);
-                        return "red";
-                    }
-                })*/
-                //.style("stroke", "blue")
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
-
-                /*
-                var legendRectSize = 18;                                  // NEW
-                var legendSpacing = 4;
-
-                var legend = svg.selectAll('.legend')
-                  .data(color.domain())
-                  .enter()
-                  .append('g')
-                  .attr('class', 'legend')
-                  .attr('transform', function(d, i) {
-                  var height = legendRectSize + legendSpacing;
-                  var offset =  height * color.domain().length / 2;
-                  var horz = -2 * legendRectSize;
-                  var vert = i * height - offset;
-                  return 'translate(' + horz + ',' + vert + ')';
-                  });
-
-                  legend.append('rect')
-                  .attr('width', legendRectSize)
-                  .attr('height', legendRectSize)
-                  .style('fill', color)
-                  .style('stroke', color);
-
-                  legend.append('text')
-                  .attr('x', legendRectSize + legendSpacing)
-                  .attr('y', legendRectSize - legendSpacing)
-                  .text(function(d) { return d; });
-
-              // TODO
-              // Need to modify the hover methods because they change the color of the counties
-              // from the original they were assign in the above function call.
-
 
               // Changes color over hover; CURRENTLY NOT WORKING
               cities.selectAll("path")
                 .on("mouseover", function(d) {
                   var name = d.properties.NAME.toLowerCase();
                   if (newData[name]) {
-                    $(".data > .label1").text("Number of People Needs: ");
+                    $(".data > .label1").text("Number of Households Who Don't Have Vehicles Available: ");
                     $(".data > .label2").text("Households Available: ");
 
                     $(".data > .info").text(newData[name].Area);
@@ -246,43 +208,15 @@
                   $(".data > .info").text("");
                   $(".data > .data1").text("");
                   $(".data > .data2").text("");
-                  //console.log("Sigh.");
-                  /*
-                  Prevent the coloring by comment this part out
-                  d3.select(this)
-                    .style("stroke", "blue")
-                    .style("fill", function(d) {
-                      var val = d.properties.VALUE;
-                      return color(val/41);
-                    });
-                    */
+
                 });  // End Hover-related shenanigans
+
+                console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
 
             });
 
           }; // END DRAW
 
-
-          /*
-          var linear = d3.scale.linear()
-            .domain([0,10])
-            .range(["rgb(46, 73, 123)", "rgb(71, 187, 94)"]);
-
-          var svg = d3.select("svg");
-
-          svg.append("g")
-            .attr("class", "legendLinear")
-            .attr("transform", "translate(20,20)");
-
-          var legendLinear = d3.legend.color()
-            .shapeWidth(30)
-            .cells(10)
-            .orient('horizontal')
-            .scale(linear);
-
-          svg.select(".legendLinear")
-            .call(legendLinear);
-            */
       }; // END ON ADD
 
       overlay.setMap(map);
