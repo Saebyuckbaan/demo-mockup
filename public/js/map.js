@@ -165,10 +165,9 @@
                   .domain(dataArray)
                   .range(colorbrewer.RdBu[9]);
                   */
-                var color = d3.scale.category20c();
                 var linearScale = d3.scale.linear();
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
-                    linearScale.range(color);
+                    linearScale.range(colorPallete);
 
               cities.selectAll("path")
                 .data(json.features)
@@ -185,6 +184,18 @@
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
 
+              cities.append("g")
+                .attr("class", "legendL")
+                .attr("transform", "translate(20, 20)");
+
+              var legendLinear = d3.legend.color()
+                .shapeWidth(30)
+                .orient('horizontal')
+                .scale(linearScale);
+
+              cities.select(".legendL")
+                .call(legendLinear);
+
               // Changes color over hover; CURRENTLY NOT WORKING
               cities.selectAll("path")
                 .on("mouseover", function(d) {
@@ -198,8 +209,6 @@
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
 
                   }
-
-
                 })
                 .on("mouseout", function(d) {
                   $(".data > .label1").text("");
