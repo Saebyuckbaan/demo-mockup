@@ -130,7 +130,7 @@
 
                 var color = d3.scale.category20c();
                 var threshold = d3.scale.threshold()
-                  .domain([0, 100, 500, 1000, 3000, 5000, 10000])
+                  .domain([100, 300, 500, 800, 1000, 3000, 5000 ])
                   .range(color);
 
                 // Modify the data to our format, probably better to do it on the back end later
@@ -142,6 +142,7 @@
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
                     dataArray.push(data[i]["no vehicle available"]);
+                    //console.log(dataArray[i]);
                 }
 
                 // Linear scale to turn our car availability number into car
@@ -151,8 +152,6 @@
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
                     linearScale.range(colorPallete);
 
-              //var noVehicleData = newData[]
-
               cities.selectAll("path")
                 .data(json.features)
                 .attr("d", path)
@@ -161,10 +160,10 @@
                 .attr("d", path)
                 .style("fill", function(d, i) {
                   //console.log(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
-                  return color(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
+                  return color( dataArray[i]);
                 })
                 .style("stroke", function(d, i){
-                  return color(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
+                  return color( dataArray[i]);
                 })
 /*
                     if (newData[d.properties.NAME.toLowerCase()]) {
