@@ -43,10 +43,24 @@ $('#divNewNotifications').on('click',"li", function( event ) {
     var location = $(this).find('a').html()+"▼";
     $('#dropdown_title').html(location);
     $('.info').html($(this).find('a').html());
-    console.log( $(this).find('a').data('veh') + " " + $(this).find('a').data('total') );
+    //console.log( $(this).find('a').data('veh') + " " + $(this).find('a').data('total') );
     $('.data1').empty().append($(this).find('a').data('veh'));
     $('.data2').empty().append($(this).find('a').data('total'));
     $('.data3').empty().append($(this).find('a').data('ratio'));
+
+    // To get path id: $(this).text().toLowerCase().replace(/ /g, '')
+    var pathID = "#" + $(this).text().toLowerCase().replace(/ /g, '') + "path";
+
+    var oldCSS = $(pathID).css("fill");
+
+    /*console.log(oldCSS);
+
+    $(pathID).css("fill-opacity", "1");
+    $(pathID).css("stroke-width", "3px");*/
+        
+    // Closes dropdown menu manually
+    $('.btn.dropdown-toggle').attr("aria-expanded", "false");
+    $('.btn-group').removeClass("open");
     
 });
 
