@@ -182,7 +182,7 @@
                 .on("mouseover", function(d) {
                   var name = d.properties.NAME.toLowerCase();
                   if (newData[name]) {
-                    $(".data > .label1").text("Vehicles Available: ");
+                    $(".data > .label1").text("Number of People Needs: ");
                     $(".data > .label2").text("Households Available: ");
 
                     $(".data > .info").text(newData[name].Area);
