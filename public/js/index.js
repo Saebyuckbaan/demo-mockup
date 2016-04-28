@@ -83,3 +83,12 @@ $("#stat-btn").click( function ( event ) {
 
 });
 
+$("#where-btn").click( function ( event ) {
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $("#stat-section").position().top }, 'slow');
+});
+
+$("#where-btn-2").click( function ( event ) {
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $("#map-section").position().top }, 'slow');
+});
