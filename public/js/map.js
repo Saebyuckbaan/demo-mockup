@@ -28,9 +28,9 @@
 
   // Google Map
   var map = new google.maps.Map(d3.select("#map").node(), {
-    zoom: 9,
+    zoom: 10,
     minZoom: 6,
-    center: new google.maps.LatLng(33.0157, -116.8611),
+    center: new google.maps.LatLng(32.9185, -117.1382),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
