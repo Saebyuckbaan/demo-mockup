@@ -76,6 +76,7 @@
       "#253494",
       "#081d58",]);
 
+
   // JSON-related
   d3.json("../json/sdcounty.json",
     function(error, json) {
@@ -214,23 +215,7 @@
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
 
-                var legend = d3.select(".legend").append("svg")
-  .attr("class", "legend")
-  .attr("width", 50)
-  .attr("height", 30)
-  .selectAll("g")
-  .data(linearScale)
 
-legend.append("rect")
-  .attr("width", 20)
-  .attr("height", 20)
-  .style("fill", function(d, i) { return color(i); });
-
-legend.append("text")
-  .attr("x", 24)
-  .attr("y", 9)
-  .attr("dy", ".35em")
-  .text(function(d) { return d.label; });
               // Changes color over hover; CURRENTLY NOT WORKING
               cities.selectAll("path")
                 .on("mouseover", function(d) {

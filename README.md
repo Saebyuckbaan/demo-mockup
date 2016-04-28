@@ -15,13 +15,13 @@
   - TBA
 
 5. Constraints
-  - TBA
+  - Although the app uses the Google Map API, the user is constrained to the immediate map of San Diego, instead of being allowed to wander around the map.
 
 6. Error Prevention/Recovery
   - TBA
 
 
-##Distribution of Work (I looked at Github's commit history for these, feel free to add stuff)
+##Distribution of Work
 Davis Yi:
 - Provided part 1a and 1b code in Github repository
 - Map Overlay maintenance
@@ -39,7 +39,7 @@ Elaine Hu:
 Jose Paulo Gonzales:
 - Wrote README
 - Map overlay color and its legends implementation
-- 
+- Google Maps restrictions
 
 
 Yue Eunice Wong:
