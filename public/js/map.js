@@ -196,6 +196,12 @@
                     $(".data > .info").text(newData[name].Area);
                     $(".data > .data1").text(newData[name]["no vehicle available"]);
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
+                    var percent = (newData[name]["no vehicle available"]) / (newData[name]["total households (occupied housing units)"]);
+                    percent = percent * 100;
+                    percent = percent + "%";
+                    $(".data > .data3").text(percent);
+
+
 
                   }
 
