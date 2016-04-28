@@ -36,6 +36,8 @@ Davis Yi:
 - Find GEOJson file and make them local file.
 - Set up and upload to Heroku app
 - Refactor server side code
+- Gave responsiveness on the app
+- minor bug fixed
 
 Elaine Hu:
 - Found and connected GeoJSON file of SD county to D3
