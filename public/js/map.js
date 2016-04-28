@@ -128,7 +128,10 @@
                 "#d84d82",
                 "#e7417d"];
 
-                var color = d3.scale.category20b();
+                var color = d3.scale.category20c();
+                var threshold = d3.scale.threshold()
+                  .domain([0, 100, 500, 1000, 3000, 5000, 10000])
+                  .range(color);
 
                 // Modify the data to our format, probably better to do it on the back end later
                 var newData = {};
@@ -148,6 +151,7 @@
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
                     linearScale.range(colorPallete);
 
+              //var noVehicleData = newData[]
 
               cities.selectAll("path")
                 .data(json.features)
@@ -155,7 +159,14 @@
                 .enter()
                 .append("svg:path")
                 .attr("d", path)
-                .style("fill", function(d) {
+                .style("fill", function(d, i) {
+                  //console.log(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
+                  return color(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
+                })
+                .style("stroke", function(d, i){
+                  return color(newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] );
+                })
+/*
                     if (newData[d.properties.NAME.toLowerCase()]) {
                         if (newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] > 6000) {
                             // green represents counties in our set with extreme values
@@ -171,11 +182,33 @@
                         //console.log(d.properties.NAME);
                         return "red";
                     }
-                })
-                .style("stroke", "blue")
+                })*/
+                //.style("stroke", "blue")
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
+/*
+                var legendRectSize = 18;                                  // NEW
+                var legendSpacing = 4;
 
+                var legend = cities.selectAll('.legend')
+                  .data(color.domain())
+                  .enter()
+                  .append('g')
+                  .attr('class', 'legend')
+                  .attr('transform', function(d, i) {
+                  var height = legendRectSize + legendSpacing;
+                  var offset =  height * color.domain().length / 2;
+                  var horz = -2 * legendRectSize;
+                  var vert = i * height - offset;
+                  return 'translate(' + horz + ',' + vert + ')';
+                  });
+
+                  legend.append('rect')
+                  .attr('width', legendRectSize)
+                  .attr('height', legendRectSize)
+                  .style('fill', color)
+                  .style('stroke', color);
+*/
               // TODO
               // Need to modify the hover methods because they change the color of the counties
               // from the original they were assign in the above function call.
