@@ -119,11 +119,12 @@
 
             var path = d3.geo.path().projection(googleMapProjection);
 
-            console.log("hello");
             $.get("/max_vehicles", function(data) {
+
               console.log("Area: " + data[0].Area);
               console.log("Max: " + data[0].percent);
-              $(".data4").text(data[0].percent);
+              $(".data4").text( (Number(data[0].percent).toFixed(2)) + "%");
+
               $(".data5").text(data[0].Area);
             });
 
@@ -173,6 +174,8 @@
                     //console.log(newData[propName]["ratio"]);
                     percent = ( (newData[propName]["ratio"]*100).toFixed(2) ) + "%";
                     dataArray.push(data[i]["no vehicle available"]);
+
+                    //Dynamic dropdown menu allocation
                     $("#divNewNotifications").append('<li>'+
                                                       '<a class="dropdown-item" '+
                                                       'data-veh="' + data[i][target] + '"' +
@@ -227,12 +230,6 @@
                     $(".data > .info").text(newData[name].Area);
                     $(".data > .data1").text(newData[name]["no vehicle available"]);
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
-                    var percent = (newData[name]["no vehicle available"]) / (newData[name]["total households (occupied housing units)"]);
-                    percent = percent * 100;
-                    percent = percent + "";
-                    percent = percent.slice(0,4);
-                    percent = percent + "%";
-
                     $(".data > .data3").text(percent);
                   }
                 })

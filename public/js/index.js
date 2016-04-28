@@ -48,3 +48,22 @@ $('#divNewNotifications').on('click',"li", function( event ) {
     
 });
 
+
+$("#main-btn").click( function ( event ) {
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $("#main-section").position().top }, 'slow');
+
+});
+
+$("#map-btn").click( function ( event ) {
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $("#map-section").position().top }, 'slow');
+
+});
+
+$("#stat-btn").click( function ( event ) {
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $("#stat-section").position().top }, 'slow');
+
+});
+
