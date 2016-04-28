@@ -128,10 +128,8 @@
                 "#d84d82",
                 "#e7417d"];
 
-                var color = d3.scale.category20c();
-                var threshold = d3.scale.threshold()
-                  .domain([100, 300, 500, 800, 1000, 3000, 5000 ])
-                  .range(color);
+                //var colorbrewer = require('colorbrewer');
+                //$('head').append('<link rel="stylesheet" href="css/colorbrewer.css" type="text/css" />');
 
                 // Modify the data to our format, probably better to do it on the back end later
                 var newData = {};
@@ -148,9 +146,15 @@
                 // Linear scale to turn our car availability number into car
                 // find a different scale or get a large specturm of colors instead of 10
                 // possibly use
+                /*
+                var threshold = d3.scale.threshold()
+                  .domain(dataArray)
+                  .range(colorbrewer.RdBu[9]);
+                  */
+                var color = d3.scale.category20c();
                 var linearScale = d3.scale.linear();
                     linearScale.domain([d3.min(dataArray, function(d) {return d;}),6000]);
-                    linearScale.range(colorPallete);
+                    linearScale.range(color);
 
               cities.selectAll("path")
                 .data(json.features)
@@ -185,11 +189,12 @@
                 //.style("stroke", "blue")
                 .append("title")
                 .text(function(d) {return d.properties.NAME;});
-/*
+
+                /*
                 var legendRectSize = 18;                                  // NEW
                 var legendSpacing = 4;
 
-                var legend = cities.selectAll('.legend')
+                var legend = svg.selectAll('.legend')
                   .data(color.domain())
                   .enter()
                   .append('g')
@@ -207,7 +212,12 @@
                   .attr('height', legendRectSize)
                   .style('fill', color)
                   .style('stroke', color);
-*/
+
+                  legend.append('text')
+                  .attr('x', legendRectSize + legendSpacing)
+                  .attr('y', legendRectSize - legendSpacing)
+                  .text(function(d) { return d; });
+
               // TODO
               // Need to modify the hover methods because they change the color of the counties
               // from the original they were assign in the above function call.
