@@ -303,7 +303,7 @@
                 .append("svg:path")
                 .attr("d", path)
                 .attr("id", function(d) {
-                  return d.properties.NAME.toLowerCase().replace(/ /g, '');
+                  return (d.properties.NAME.toLowerCase().replace(/ /g, '') + "path");
                 })
                 .style("fill", function(d, i) {
                   return color(newData[d.properties.NAME.toLowerCase()]["ratio"]);
@@ -327,6 +327,8 @@
                     $(".data > .data1").text(newData[name]["no vehicle available"]);
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
                     $(".data > .data3").text(percent);
+
+                    $(".btn.dropdown-toggle").text(d.properties.NAME + " ▼");
                   }
                 })
                 /*
