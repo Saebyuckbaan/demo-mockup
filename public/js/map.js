@@ -68,7 +68,7 @@
             "#225ea8","#253494","#081d58"]);
 
   // JSON-related
-  d3.json("../json/zillowneighborhoodsca.geojson",
+  d3.json("../json/sdcounty.json",
     function(error, json) {
       // if an error occurs, THROW AN ERROR
       if (error) {
