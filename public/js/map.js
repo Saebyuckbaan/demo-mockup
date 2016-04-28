@@ -36,6 +36,7 @@
     maxZoom: 13,
     mapTypeControl: false,
     streetViewControl: false,
+    scrollwheel: false,
     center: new google.maps.LatLng(32.9185, -117.1382),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
