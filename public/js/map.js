@@ -217,8 +217,8 @@
 
             $.get("/max_vehicles", function(data) {
 
-              console.log("Area: " + data[0].Area);
-              console.log("Max: " + data[0].percent);
+              /*console.log("Area: " + data[0].Area);
+              console.log("Max: " + data[0].percent);*/
               $(".data4").text( (Number(data[0].percent).toFixed(2)) + "%");
 
               $(".data5").text(data[0].Area);

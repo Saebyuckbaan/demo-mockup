@@ -53,10 +53,13 @@ $('#divNewNotifications').on('click',"li", function( event ) {
 
     var oldCSS = $(pathID).css("fill");
 
-    console.log(oldCSS);
+    //console.log(oldCSS);
 
-    $(pathID).css("fill-opacity", "1");
-    $(pathID).css("stroke-width", "3px");
+    // Flashes an area red when selected
+    $(pathID).css({"fill": "red", "stroke": "red", "stroke-width": "3px"});
+    $(pathID).animate( "slow", function() {
+      $(pathID).delay(1500).css({"fill": oldCSS, "stroke": "black", "stroke-width": "1px"});
+    });
         
     // Closes dropdown menu manually
     $('.btn.dropdown-toggle').attr("aria-expanded", "false");
