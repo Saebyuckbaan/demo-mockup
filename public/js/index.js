@@ -35,7 +35,7 @@ function map ( ){
 
 };
 
-$('#divNewNotifications').on('click',"li", function(event ) {
+$('#divNewNotifications').on('click',"li", function( event ) {
     event.preventDefault();
 
     var location = $(this).find('a').html()+"▼";
@@ -44,6 +44,7 @@ $('#divNewNotifications').on('click',"li", function(event ) {
     console.log( $(this).find('a').data('veh') + " " + $(this).find('a').data('total') );
     $('.data1').empty().append($(this).find('a').data('veh'));
     $('.data2').empty().append($(this).find('a').data('total'));
+    $('.data3').empty().append($(this).find('a').data('ratio'));
     
 });
 

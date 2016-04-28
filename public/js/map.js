@@ -159,17 +159,20 @@
                 var target = "no vehicle available";
 
                 var totals = "total households (occupied housing units)";
+                var percent;
 
                 for (var i = 0; i < data.length; i++) {
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
-                    newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
+                    newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals] ;
                     //console.log(newData[propName]["ratio"]);
+                    percent = ( (newData[propName]["ratio"]*100).toFixed(2) ) + "%";
                     dataArray.push(data[i]["no vehicle available"]);
                     $("#divNewNotifications").append('<li>'+
                                                       '<a class="dropdown-item" '+
                                                       'data-veh="' + data[i][target] + '"' +
                                                       'data-total="' + data[i][totals] + '"' +
+                                                      'data-ratio="' + percent + '"' +
                                                       '>' +
                                                       data[i]["Area"] +
                                                       '</a>'+
@@ -214,9 +217,7 @@
                     $(".data > .info").text(newData[name].Area);
                     $(".data > .data1").text(newData[name]["no vehicle available"]);
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
-                    var percent = (newData[name]["no vehicle available"]) / (newData[name]["total households (occupied housing units)"]);
-                    percent = percent * 100;
-                    percent = percent + "%";
+                    var percent = ( Number(newData[name].ratio) * 100 ).toFixed(2) + "%" ;
                     $(".data > .data3").text(percent);
 
 
