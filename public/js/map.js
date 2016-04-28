@@ -157,6 +157,7 @@
                     if (newData[d.properties.NAME.toLowerCase()]) {
                         if (newData[d.properties.NAME.toLowerCase()][["no vehicle available"]] > 6000) {
                             // green represents counties in our set with extreme values
+
                             return "green";
                         }
 
@@ -165,6 +166,7 @@
                     }
                     else {
                         // Red represents counties not in our dataset
+                        //console.log(d.properties.NAME);
                         return "red";
                     }
                 })
@@ -204,6 +206,8 @@
             });
 
           }; // END DRAW
+
+
           /*
           var linear = d3.scale.linear()
             .domain([0,10])
