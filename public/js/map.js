@@ -180,12 +180,17 @@
               // Changes color over hover; CURRENTLY NOT WORKING
               cities.selectAll("path")
                 .on("mouseover", function(d) {
-                  //console.log("WHY");
-                  /*
-                  d3.select(this)
-                    .style("stroke", "black")
-                    .style("fill", "#E57373");
-                    */
+                  var name = d.properties.NAME.toLowerCase();
+                  if (newData[name]) {
+                    $(".data > .label1").text("Vehicles Available: ");
+                    $(".data > .label2").text("Households Available: ");
+
+                    $(".data > .info").text(newData[name].Area);
+                    $(".data > .data1").text(newData[name]["no vehicle available"]);
+                    $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
+
+                  }
+
 
                 })
                 .on("mouseout", function(d) {
