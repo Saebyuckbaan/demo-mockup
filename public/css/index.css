@@ -127,10 +127,6 @@ ul {
   list-style-type: none;
 }
 
-.data {
-  margin-left: 50px;
-}
-
 .data2 {
   margin-left: 20px;
 
@@ -138,6 +134,10 @@ ul {
 
 .num {
     font-size: 20px;
+}
+
+.shift {
+  margin-left: 50px;
 }
 
 #location {
