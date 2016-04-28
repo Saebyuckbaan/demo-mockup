@@ -1,13 +1,13 @@
 //dependencies for each module used
-var express = require('express');
-var http = require('http');
-var path = require('path');
+var express    = require('express');
+var http       = require('http');
+var path       = require('path');
 var handlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
-var session = require('express-session');
-var dotenv = require('dotenv');
-var pg = require('pg');
-var app = express();
+var session    = require('express-session');
+var dotenv     = require('dotenv');
+var pg         = require('pg');
+var app        = express();
 //client id and client secret here, taken from .env (which you need to create)
 dotenv.load();
 
