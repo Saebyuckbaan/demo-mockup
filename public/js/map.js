@@ -118,6 +118,13 @@
             var path = d3.geo.path().projection(googleMapProjection);
 
             $.get("/vehicle_availability", function(data) {
+              // if you want to get into double .get Hell for both databases
+              /*
+              $.get("/transportation_usage", function(tranData) {
+                console.log(tranData);
+                console.log(data);
+              });
+              */
 
                 // Represent the colors specturm of the data
                 // where between red and blue represent the availablity of the car
@@ -157,7 +164,7 @@
                     var propName = data[i].Area.toLowerCase();
                     newData[propName] = data[i];
                     newData[propName]["ratio"] = newData[propName][target]/newData[propName][totals];
-                    console.log(newData[propName]["ratio"]);
+                    //console.log(newData[propName]["ratio"]);
                     dataArray.push(data[i]["no vehicle available"]);
                     //console.log(dataArray[i]);
                 }
@@ -175,6 +182,9 @@
                 .enter()
                 .append("svg:path")
                 .attr("d", path)
+                .attr("id", function(d) {
+                  return d.properties.NAME.toLowerCase().replace(/ /g, '');
+                })
                 .style("fill", function(d, i) {
                   return color(newData[d.properties.NAME.toLowerCase()]["ratio"]);
                 })
