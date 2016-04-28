@@ -2,16 +2,7 @@
   "use strict";
 
   $.get("/ranks", function(data2) {
-      /*
-      console.log("Area: " + data[0].Area);
-      console.log("Max: " + data[0].percent);
-      $(".data4").text( (Number(data[0].percent).toFixed(2)) + "%");
 
-      $(".data5").text(data[0].Area);
-      */
-      // Defining the margins and chart size
-  // See margin conventions for more information
-  
   
   var data =[];
   $.each ( data2, function ( index, value ) { 
@@ -20,8 +11,6 @@
     data.push(obj);
   });
 
-  
-  
 
   var margin = {top: 20, right: 10, bottom: 100, left: 40},
       width = parseInt(d3.select('.chart').style('width'), 10),
@@ -56,6 +45,12 @@
   // TODO:
   // 1. Consume the taco data
   // 2. Update the x, y, width, and height attributes to appropriate reflect this
+  var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden");
+
   chart
     .selectAll(".bar")
     .data(data.map(function(d){ return d.percent; }))
@@ -65,13 +60,26 @@
     .attr("width", (innerWidth / data.length)-20)
     .attr("y", function(d) { return innerHeight - (innerHeight * (d/MaxRange)); })
     .attr("height", function(d) { return innerHeight * (d/MaxRange); })
-    .attr("fill", "teal");
+    .on('mouseover', function(d, i) {
+      return tooltip.style("visibility", "visible").text("Percent:" + d + "%");
+    })
+    .on('mouseout', function() {
+      return tooltip.style("visibility", "hidden");
+    })
+    .on("mousemove", function(){return tooltip.style("top",
+    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+    })
+    .on("click", function(d, i) {
+      console.log("d: " + d);
+      console.log("i: " + i);
+      d3.event.stopPropagation();
+  });
+
 
   // Orient the x and y axis
   var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
   var yAxis = d3.svg.axis().scale(yScale).orient("left");
   //console.log(yAxis);
-
   // TODO: Append X axis
   chart
     .append("g")
