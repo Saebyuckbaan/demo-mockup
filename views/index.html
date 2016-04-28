@@ -38,7 +38,7 @@
 
       <div class="jumbotron">
         <div class="title">
-          <h1>ÜBERÜNO</h1>
+          <h1 id="name">ÜBERÜNO</h1>    
           <p>Our goal is to help Uber/Lyft Drivers gain the most profit by identifying areas in San Diego with the least availability of transportation.
           <div>
             <a href="#map-section" class="btn btn-lg active" role="button">Learn Where You can profit most in San Diego</a>
@@ -54,19 +54,35 @@
                 <p>Try to click on different areas and compare the results!</p>
               </div>
               <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Location ▼</button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" >ALPINE</a>
-                  <a class="dropdown-item" >CENTRAL SAN DIEGO</a>
-                  <a class="dropdown-item" >CHULA VISTA</a>
-                  <a class="dropdown-item" >CORONADO</a>
-                  <a class="dropdown-item" >COSTAL</a>
-                  <a class="dropdown-item" >DEL MAR MIRA MESA</a>
-                  <a class="dropdown-item" >EL CAJON</a>
-                  <a class="dropdown-item" >ELLIOT NAVAJO</a>
-                  <a class="dropdown-item" >HARBISON CREST</a>
-                  <a class="dropdown-item" >JAMUL</a>
-                  <a class="dropdown-item" >KERNY MESA</a>
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown_title">Select Location ▼</button>
+                <div class="dropdown-menu scrollable-menu" role="menu">
+                  <ul id="divNewNotifications">
+                    <li><a class="dropdown-item" >ALPINE</a></li>
+                    <li><a class="dropdown-item" >CENTRAL SAN DIEGO</a></li>
+                    <li><a class="dropdown-item" >CHULA VISTA</a></li>
+                    <li><a class="dropdown-item" >CORONADO</a></li>
+                    <li><a class="dropdown-item" >COSTAL</a></li>
+                    <li><a class="dropdown-item" >DEL MAR MIRA MESA</a></li>
+                    <li><a class="dropdown-item" >EL CAJON</a></li>
+                    <li><a class="dropdown-item" >ELLIOT NAVAJO</a></li>
+                    <li><a class="dropdown-item" >HARBISON CREST</a></li>
+                    <li><a class="dropdown-item" >JAMUL</a></li>
+                    <li><a class="dropdown-item" >KERNY MESA</a></li>
+                    <li><a class="dropdown-item" >LA MESA</a></li>
+                    <li><a class="dropdown-item" >LAKESIDE</a></li>
+                    <li><a class="dropdown-item" >LEMON GROVE</a></li>
+                    <li><a class="dropdown-item" >MID CITY</a></li>
+                    <li><a class="dropdown-item" >MIRAMAR</a></li>
+                    <li><a class="dropdown-item" >NATIONAL CITY</a></li>
+                    <li><a class="dropdown-item" >NORTH SAN DIEGO</a></li>
+                    <li><a class="dropdown-item" >PENINSULA</a></li>
+                    <li><a class="dropdown-item" >POWAY</a></li>
+                    <li><a class="dropdown-item" >SOUTH BAY</a></li>
+                    <li><a class="dropdown-item" >SOUTHEASTERN SAN DEIGO</a></li>
+                    <li><a class="dropdown-item" >SPRING VALLEY</a></li>
+                    <li><a class="dropdown-item" >SWEETWATER</a></li>
+                    <li><a class="dropdown-item" >UNIVERSITY</a></li>
+                  </ul>
                 </div> <!--end of dropdown-->
               </div> <!--end of button group-->
             </div>
@@ -98,5 +114,6 @@
       src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="./js/map.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

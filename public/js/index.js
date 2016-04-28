@@ -99,4 +99,11 @@ function map ( ){
     .append( "path" )
     .attr( "fill", "#ccc" )
     .attr( "d", geoPath );
-  };
+};
+
+$('.dropdown-toggle').dropdown();
+
+
+$('#divNewNotifications li').on('click', function() {
+    $('#dropdown_title').html($(this).find('a').html());
+    });
