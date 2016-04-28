@@ -190,7 +190,7 @@
                 .on("mouseover", function(d) {
                   var name = d.properties.NAME.toLowerCase();
                   if (newData[name]) {
-                    $(".data > .label1").text("Number of People Needs: ");
+                    $(".data > .label1").text("Number of Households Who Don't Have Vehicles Available: ");
                     $(".data > .label2").text("Households Available: ");
 
                     $(".data > .info").text(newData[name].Area);
@@ -210,6 +210,8 @@
                   $(".data > .data2").text("");
                   
                 });  // End Hover-related shenanigans
+
+                console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
 
             });
 
