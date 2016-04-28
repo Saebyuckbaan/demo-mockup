@@ -170,9 +170,10 @@ function map ( ){
     .attr( "d", geoPath );
 };
 
-$('.dropdown-toggle').dropdown();
-
 
 $('#divNewNotifications li').on('click', function() {
-    $('#dropdown_title').html($(this).find('a').html());
-    });
+    var location = $(this).find('a').html()+"▼";
+    $('#dropdown_title').html(location);
+    $('.info').html($(this).find('a').html());
+    
+});
