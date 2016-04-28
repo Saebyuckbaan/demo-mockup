@@ -211,17 +211,13 @@
                 .on("mouseover", function(d) {
                   var name = d.properties.NAME.toLowerCase();
                   if (newData[name]) {
+                    var percent = ( Number(newData[name].ratio) * 100 ).toFixed(2) + "%" ;
                     $(".data > .label1").text("Number of Households Who Don't Have Vehicles Available: ");
                     $(".data > .label2").text("Households Available: ");
-
                     $(".data > .info").text(newData[name].Area);
                     $(".data > .data1").text(newData[name]["no vehicle available"]);
                     $(".data > .data2").text(newData[name]["total households (occupied housing units)"]);
-                    var percent = ( Number(newData[name].ratio) * 100 ).toFixed(2) + "%" ;
                     $(".data > .data3").text(percent);
-
-
-
                   }
 
 
@@ -229,11 +225,10 @@
                 .on("mouseout", function(d) {
                   $(".data > .label1").text("");
                   $(".data > .label2").text("");
-
                   $(".data > .info").text("");
                   $(".data > .data1").text("");
                   $(".data > .data2").text("");
-                  
+                  $(".data > .data3").text("");
                 });  // End Hover-related shenanigans
 
                 console.log("data: " + data[0].Area + "other stuff: " + data[0]["no vehicle available"]);
