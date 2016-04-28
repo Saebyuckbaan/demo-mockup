@@ -36,7 +36,7 @@ html, body {
 
 .cities path:hover {
   fill: red;
-  fill-opacity: 1;
+  fill-opacity: 0.8;
 }
 
 .chart {
