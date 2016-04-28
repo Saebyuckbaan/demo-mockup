@@ -1,8 +1,122 @@
 (function(d3) {
   "use strict";
 
+  $.get("/ranks", function(data2) {
+      /*
+      console.log("Area: " + data[0].Area);
+      console.log("Max: " + data[0].percent);
+      $(".data4").text( (Number(data[0].percent).toFixed(2)) + "%");
+
+      $(".data5").text(data[0].Area);
+      */
+      // Defining the margins and chart size
+  // See margin conventions for more information
+  
+  
+  var data =[];
+  $.each ( data2, function ( index, value ) { 
+    var obj = { area: data2[index].Area, percent: data2[index].percent};
+    console.log(obj);
+    data.push(obj);
+  });
 
 
+/*
+  
+  var data = [
+    { area: data[0].Area, percent: data[0].percent },
+    { area: data[1].Area, percent: data[1].percent },
+    { area: data[2].Area, percent: data[2].percent },
+    { area: data[3].Area, percent: data[3].percent },
+    { area: data[4].Area, percent: data[4].percent },
+    { area: data[5].Area, percent: data[5].percent },
+    { area: data[6].Area, percent: data[6].percent },
+    { area: data[7].Area, percent: data[7].percent },
+    { area: data[8].Area, percent: data[8].percent },
+    { area: data[9].Area, percent: data[9].percent },
+    { area: data[10].Area, percent: data[10].percent },
+    { area: data[11].Area, percent: data[11].percent },
+    { area: data[12].Area, percent: data[12].percent },
+    { area: data[13].Area, percent: data[13].percent },
+    { area: data[14].Area, percent: data[14].percent },
+    { area: data[15].Area, percent: data[15].percent },
+    { area: data[16].Area, percent: data[16].percent },
+    // { area: data[17].Area, percent: data[17].percent },
+    // { area: data[18].Area, percent: data[18].percent },
+    // { area: data[19].Area, percent: data[19].percent },
+    // { area: data[20].Area, percent: data[20].percent },
+
+  ];
+  */
+  
+  
+
+  var margin = {top: 20, right: 10, bottom: 100, left: 40},
+      width = 1500 - margin.right - margin.left,
+      height = 500 - margin.top - margin.bottom;
+
+  var innerWidth  = width  - margin.left - margin.right;
+  var innerHeight = height - margin.top  - margin.bottom;
+
+  // TODO: Input the proper values for the scales
+  var xScale = d3.scale.ordinal().rangeRoundBands([0, innerWidth], 0);
+  var yScale = d3.scale.linear().range([innerHeight, 0]);
+  var MaxRange = d3.max (data.map (function (d) { return d.percent; }));
+
+  // Define the chart
+  var chart = d3
+                .select(".chart")
+                .append("svg")
+                .attr("width", width + margin.right + margin.left)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" +  margin.left + "," + margin.right + ")");
+
+  // Render the chart
+  xScale.domain(data.map(function (d){ return d.area; }));
+
+  // TODO: Fix the yScale domain to scale with any ratings range
+  yScale.domain([0, MaxRange]);
+
+  // Note all these values are hard coded numbers
+  // TODO:
+  // 1. Consume the taco data
+  // 2. Update the x, y, width, and height attributes to appropriate reflect this
+  chart
+    .selectAll(".bar")
+    .data(data.map(function(d){ return d.percent; }))
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d, i) { return ((innerWidth / data.length) * i) + 20; })
+    .attr("width", (innerWidth / data.length)-20)
+    .attr("y", function(d) { return innerHeight - (innerHeight * (d/MaxRange)); })
+    .attr("height", function(d) { return innerHeight * (d/MaxRange); })
+    .attr("fill", "teal");
+
+  // Orient the x and y axis
+  var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+  var yAxis = d3.svg.axis().scale(yScale).orient("left");
+  //console.log(yAxis);
+
+  // TODO: Append X axis
+  chart
+    .append("g")
+    .call(xAxis)
+    .attr("transform", "translate(" + 0 + "," + innerHeight + ")")
+    .selectAll("text")
+    .attr("transform", "rotate(" + -45 + ")")
+    .style("text-anchor", "end");
+
+
+  // TODO: Append Y axis
+  chart
+    .append("g")
+    .call(yAxis);
+  });
+
+
+
+/********************************************************************/
   // //vehicle_availability
   // d3.json("/vehicle_availability", function( err, data )
   // {

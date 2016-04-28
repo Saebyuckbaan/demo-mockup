@@ -83,6 +83,26 @@ exports.max_vehicles = function (req, res) {
   return {max_vehicles: "No data present."}
 }
 
+exports.ranks = function (req, res) {
+  var client = new pg.Client(conString);
+  client.connect(function(err) {
+      if (err) {
+          console.error('could not connect to postgres', err);
+      } else {
+          console.log("Successfully connected to postgres")
+      }
+
+  });
+  var query = "select \"Area\", 100*(\"no vehicle available\"*1.0 / \"total households (occupied housing units)\") as \"percent\"" +
+              "from cogs121_16_raw.hhsa_san_diego_demographics_vehicle_availability_2012 order by \"percent\" desc";
+  client.query(query, function(err, dat){
+    client.end();
+    res.json(dat.rows);
+  });
+
+  return {max_vehicles: "No data present."}
+}
+
 
 
 

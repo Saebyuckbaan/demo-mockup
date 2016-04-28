@@ -56,6 +56,7 @@ app.get('/vehicle_availability', router.query.vehicle_availability );
 app.get('/sd_college_locations', router.query.sd_college_locations);
 app.get('/transportation_usage', router.query.transportation_usage);
 app.get('/max_vehicles', router.query.max_vehicles);
+app.get('/ranks', router.query.ranks);
 
 
 
