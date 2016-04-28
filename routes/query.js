@@ -50,7 +50,7 @@ exports.vehicle_availability = function (req, res) {
 
   });
 
-  client.query("SELECT * FROM cogs121_16_raw.hhsa_san_diego_demographics_vehicle_availability_2012",function(err,dat){
+  client.query('SELECT * FROM cogs121_16_raw.hhsa_san_diego_demographics_vehicle_availability_2012 order by "Area" asc',function(err,dat){
         client.end();
         //console.log(err);
         res.json(dat.rows);
