@@ -58,7 +58,7 @@ $('#divNewNotifications').on('click',"li", function( event ) {
     // Flashes an area red when selected
     $(pathID).css({"fill": "red", "stroke": "red", "stroke-width": "3px"});
     $(pathID).animate( "slow", function() {
-      $(pathID).delay(1500).css({"fill": oldCSS, "stroke": "black", "stroke-width": "1px"});
+      $(pathID).delay(2500).css({"fill": oldCSS, "stroke": "black", "stroke-width": "1px"});
     });
         
     // Closes dropdown menu manually

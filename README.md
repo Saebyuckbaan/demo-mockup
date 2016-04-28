@@ -28,6 +28,20 @@
   - The user will easily be able to recover if they click on the wrong item in the drop-down menu by returning to it and re-selecting.
   - The drop-down menu's selected element reflects where the user hovers on the map. This prevents confusion or mistakes if the user initially selects a drop-down item and then hovers to the map.
 
+##Design Decisions
+When it comes to developing websites and online services, there are many resources out there to achieve a goal.  Rather than reinvent the wheel, using those resources will help cut down time spent on smaller details so people can focus more on the big picture.  That's also why anyone would use D3; because D3 is a powerful and fast tool for data visualization.  
+
+That being said, we decided to use Bootstrap for a number of reasons.  First and foremost, it's a straightforward external CSS/JS library that many sites use today.  While following the crowd may be boring, people are more likely to be familiar with its look and feel.  Because of its popularity, any troubles we had with Bootstrap were easily smoothed over by searching online for help.  Using Bootstrap also allows us access to easier styling of our site, using columns and modals so that we can focus more on the main crux of the assignment: data visualization.  
+
+After a lot of jumping around, we ultimately decided to focus on developing a visual resource of Uber/Lyft drivers to search for areas in San Diego county where households had no vehicles.  Since we're talking about areas, it seems like a natural decision to utilize a map.  Google maps was the first resource with a known API for a map that we thought of, so we went with that in the favor of time.  Furthermore, there are quite a few tutorials out there that taught us how to overlay geographical json data over the map for a nice mapping of our desired areas.  The spectrum of colors was picked because it looks nice and because it has a contrast to try and draw the viewer's eyes more to the darker areas.  
+
+While hovering over an area darkens it and will tell you the name of the area, we wanted to do more!  So, on the side, we not only display the name of the area, but also some details about it as the user runs their mouse over
+the county overlay.  If users are interested in a particular area, they can use the dropdown menu to find that area of interest.  When selected, the area's details will be shown, and the area itself will momentarily flash red on the map to show users where it is.  A dropdown menu is the best way we thought of to present all 42 areas available with our current setup.  Unfortunately, the layout of the site takes up quite a bit of vertical real estate on mobile, so a lot of the concurrent information display may not be seen.  
+
+In the section below, we present the same information as a bar graph, where users can run their mouse over each bar to see the actual percentage of people without a vehicle.  Sometimes, people prefer seeing a more measurable comparison than a visual one (length vs. color), so we thought to include it.  This also allows people to refer to this graph first and later jump back up to the map if they are interested in the details of a specific area they saw.  
+
+Finally, our choice of text font, header image, and overall color scheme are arbitrary.  We want to express that, while we are serious "designers," we also have fun.  We hope you appreciate our sense of aesthetics.  
+
 ##Distribution of Work
 Davis Yi:
 - Provided part 1a and 1b code in Github repository
