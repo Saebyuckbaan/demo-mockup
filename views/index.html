@@ -8,18 +8,14 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/index.css" type="text/css">
-    <!-- Legend -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.10.0/d3-legend.min.js">
-  </head>
-  <style>
-    .legend {
-      font-size: 12px;
-    }
-    rect {
-      stroke-width: 2;
-    }
-  </style>
+    <!-- Colorbrewer -->
+    <!-- <link rel="stylesheet" href="css/colorbrewer.css" type="text/css"> -->
+    <style>
+      .legend rect{
 
+      }
+    </style>
+  </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
       {{> navbar}}
@@ -85,17 +81,11 @@
             {{> map}}
 
           </div> <!--row-->
-
           <div class="row">
             <div class="button2">
               <a href="#stat-section" class="btn btn-lg active" role="button">So where should you go?</a>
             </div>
           </div>
-
-          
-
-          
-            
      </div> <!--container-->
       <div id="stat-section" class="container-fluid">
         <div class="description">
@@ -116,7 +106,9 @@
 
     <!-- JAVASCRIPT -->
     <script src="./js/d3.min.js"></script>
-    <!-- <script src="./js/d3-legend.js"> -->
+    <script src="./js/colorbrewer.js"></script>
+    <!-- <script src="./js/d3-legend.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.10.0/d3-legend.js"></script>
     <script type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="./js/jquery-2.2.3.min.js"></script>
