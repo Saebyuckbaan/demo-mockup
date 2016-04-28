@@ -53,6 +53,7 @@ html, body {
 .jumbotron {
   background-image: url("../image/cars.jpg");
   height: 600px;
+  margin:0;
 }
 .title{
   text-align: center;
@@ -76,7 +77,11 @@ html, body {
   background-color: #AB9683;
 }
 
-.button {
-  max-width: 500px;
-  text-align: center;
+.btn {
+  margin: 20px;
+  background-color:#F0DAC7;
+  border: 2px solid #fff;
+  color: black;
+  width: 400px;
+  font-weight:900;
 }
