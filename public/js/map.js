@@ -122,7 +122,7 @@
             $.get("/max_vehicles", function(data) {
               console.log("Area: " + data[0].Area);
               console.log("Max: " + data[0].percent);
-              $(".data4").text(data[0].percent);
+              $(".data4").text( (Number(data[0].percent).toFixed(2)) + "%");
               $(".data5").text(data[0].Area);
             });
 
@@ -178,6 +178,8 @@
                     //console.log(newData[propName]["ratio"]);
                     percent = ( (newData[propName]["ratio"]*100).toFixed(2) ) + "%";
                     dataArray.push(data[i]["no vehicle available"]);
+
+                    //Dynamic dropdown menu allocation
                     $("#divNewNotifications").append('<li>'+
                                                       '<a class="dropdown-item" '+
                                                       'data-veh="' + data[i][target] + '"' +
