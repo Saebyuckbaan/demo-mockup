@@ -20,34 +20,6 @@
     data.push(obj);
   });
 
-
-/*
-  
-  var data = [
-    { area: data[0].Area, percent: data[0].percent },
-    { area: data[1].Area, percent: data[1].percent },
-    { area: data[2].Area, percent: data[2].percent },
-    { area: data[3].Area, percent: data[3].percent },
-    { area: data[4].Area, percent: data[4].percent },
-    { area: data[5].Area, percent: data[5].percent },
-    { area: data[6].Area, percent: data[6].percent },
-    { area: data[7].Area, percent: data[7].percent },
-    { area: data[8].Area, percent: data[8].percent },
-    { area: data[9].Area, percent: data[9].percent },
-    { area: data[10].Area, percent: data[10].percent },
-    { area: data[11].Area, percent: data[11].percent },
-    { area: data[12].Area, percent: data[12].percent },
-    { area: data[13].Area, percent: data[13].percent },
-    { area: data[14].Area, percent: data[14].percent },
-    { area: data[15].Area, percent: data[15].percent },
-    { area: data[16].Area, percent: data[16].percent },
-    // { area: data[17].Area, percent: data[17].percent },
-    // { area: data[18].Area, percent: data[18].percent },
-    // { area: data[19].Area, percent: data[19].percent },
-    // { area: data[20].Area, percent: data[20].percent },
-
-  ];
-  */
   
   
 
