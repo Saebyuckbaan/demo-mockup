@@ -53,7 +53,7 @@
 
   var margin = {top: 20, right: 10, bottom: 100, left: 40},
       width = 1500 - margin.right - margin.left,
-      height = 500 - margin.top - margin.bottom;
+      height = 600 - margin.top - margin.bottom;
 
   var innerWidth  = width  - margin.left - margin.right;
   var innerHeight = height - margin.top  - margin.bottom;

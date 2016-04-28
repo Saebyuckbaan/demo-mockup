@@ -6,6 +6,7 @@ html, body {
   position: relative;
   /*font-family: 'Alegreya Sans', sans-serif; */
   font-family: 'Fjalla One', sans-serif;
+  background-color: black;
   
 }
 
@@ -69,7 +70,7 @@ p {
 }
 
 .chart rect {
-  fill: steelblue;
+  fill: #d8b0ff;
 }
 
 
@@ -102,7 +103,7 @@ p {
 
 #stat-section {
   padding-top:50px;
-  height: 850px;
+  height: 900px;
   background-color: #AB9683;
 }
 
