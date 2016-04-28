@@ -118,11 +118,13 @@
 
             var path = d3.geo.path().projection(googleMapProjection);
 
-            console.log("hello");
             $.get("/max_vehicles", function(data) {
-              console.log("Area: " + data[0].Area);
-              console.log("Max: " + data[0].percent);
-              $(".data4").text(data[0].percent);
+              var percent = data[0].percent;
+              percent = percent * 100;
+              percent = percent + "";
+              percent = percent.slice(0,4);
+              percent = percent + "%";
+              $(".data4").text(percent);
               $(".data5").text(data[0].Area);
             });
 

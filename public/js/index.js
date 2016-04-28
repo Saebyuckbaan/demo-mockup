@@ -48,3 +48,4 @@ $('#divNewNotifications').on('click',"li", function( event ) {
     
 });
 
+
