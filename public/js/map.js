@@ -1,100 +1,100 @@
 (function(d3) {
   "use strict";
 
-  $.get("/ranks", function(data2) {
+  // $.get("/ranks", function(data2) {
 
   
-  var data =[];
-  $.each ( data2, function ( index, value ) { 
-    var obj = { area: data2[index].Area, percent: data2[index].percent};
-    console.log(obj);
-    data.push(obj);
-  });
+  // var data =[];
+  // $.each ( data2, function ( index, value ) { 
+  //   var obj = { area: data2[index].Area, percent: data2[index].percent};
+  //   console.log(obj);
+  //   data.push(obj);
+  // });
 
 
-  var margin = {top: 20, right: 10, bottom: 100, left: 40},
-      width = parseInt(d3.select('.chart').style('width'), 10),
-      width = width - margin.right - margin.left,
-      //height = parseInt(d3.select('.chart').style('height'), 10),
-      height = 600 - margin.top - margin.bottom;
+  // var margin = {top: 20, right: 10, bottom: 100, left: 40},
+  //     width = parseInt(d3.select('.chart').style('width'), 10),
+  //     width = width - margin.right - margin.left,
+  //     //height = parseInt(d3.select('.chart').style('height'), 10),
+  //     height = 600 - margin.top - margin.bottom;
 
-  var innerWidth  = width  - margin.left - margin.right;
-  var innerHeight = height - margin.top  - margin.bottom;
+  // var innerWidth  = width  - margin.left - margin.right;
+  // var innerHeight = height - margin.top  - margin.bottom;
 
-  // TODO: Input the proper values for the scales
-  var xScale = d3.scale.ordinal().rangeRoundBands([0, innerWidth], 0);
-  var yScale = d3.scale.linear().range([innerHeight, 0]);
-  var MaxRange = d3.max (data.map (function (d) { return d.percent; }));
+  // // TODO: Input the proper values for the scales
+  // var xScale = d3.scale.ordinal().rangeRoundBands([0, innerWidth], 0);
+  // var yScale = d3.scale.linear().range([innerHeight, 0]);
+  // var MaxRange = d3.max (data.map (function (d) { return d.percent; }));
 
-  // Define the chart
-  var chart = d3
-                .select(".chart")
-                .append("svg")
-                .attr("width", width + margin.right + margin.left)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform", "translate(" +  margin.left + "," + margin.right + ")");
+  // // Define the chart
+  // var chart = d3
+  //               .select(".chart")
+  //               .append("svg")
+  //               .attr("width", width + margin.right + margin.left)
+  //               .attr("height", height + margin.top + margin.bottom)
+  //               .append("g")
+  //               .attr("transform", "translate(" +  margin.left + "," + margin.right + ")");
 
-  // Render the chart
-  xScale.domain(data.map(function (d){ return d.area; }));
+  // // Render the chart
+  // xScale.domain(data.map(function (d){ return d.area; }));
 
-  // TODO: Fix the yScale domain to scale with any ratings range
-  yScale.domain([0, MaxRange]);
+  // // TODO: Fix the yScale domain to scale with any ratings range
+  // yScale.domain([0, MaxRange]);
 
-  // Note all these values are hard coded numbers
-  // TODO:
-  // 1. Consume the taco data
-  // 2. Update the x, y, width, and height attributes to appropriate reflect this
-  var tooltip = d3.select("body")
-    .append("div")
-    .style("position", "absolute")
-    .style("z-index", "10")
-    .style("visibility", "hidden");
+  // // Note all these values are hard coded numbers
+  // // TODO:
+  // // 1. Consume the taco data
+  // // 2. Update the x, y, width, and height attributes to appropriate reflect this
+  // var tooltip = d3.select("body")
+  //   .append("div")
+  //   .style("position", "absolute")
+  //   .style("z-index", "10")
+  //   .style("visibility", "hidden");
 
-  chart
-    .selectAll(".bar")
-    .data(data.map(function(d){ return d.percent; }))
-    .enter().append("rect")
-    .attr("class", "bar")
-    .attr("x", function(d, i) { return ((innerWidth / data.length) * i) + 20; })
-    .attr("width", (innerWidth / data.length)-20)
-    .attr("y", function(d) { return innerHeight - (innerHeight * (d/MaxRange)); })
-    .attr("height", function(d) { return innerHeight * (d/MaxRange); })
-    .on('mouseover', function(d, i) {
-      return tooltip.style("visibility", "visible").text("Percent: " + (Number(d).toFixed(2)) + "%");
-    })
-    .on('mouseout', function() {
-      return tooltip.style("visibility", "hidden");
-    })
-    .on("mousemove", function(){return tooltip.style("top",
-    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
-    })
-    .on("click", function(d, i) {
-      console.log("d: " + d);
-      console.log("i: " + i);
-      d3.event.stopPropagation();
-  });
-
-
-  // Orient the x and y axis
-  var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-  var yAxis = d3.svg.axis().scale(yScale).orient("left");
-  //console.log(yAxis);
-  // TODO: Append X axis
-  chart
-    .append("g")
-    .call(xAxis)
-    .attr("transform", "translate(" + 0 + "," + innerHeight + ")")
-    .selectAll("text")
-    .attr("transform", "rotate(" + -45 + ")")
-    .style("text-anchor", "end");
+  // chart
+  //   .selectAll(".bar")
+  //   .data(data.map(function(d){ return d.percent; }))
+  //   .enter().append("rect")
+  //   .attr("class", "bar")
+  //   .attr("x", function(d, i) { return ((innerWidth / data.length) * i) + 20; })
+  //   .attr("width", (innerWidth / data.length)-20)
+  //   .attr("y", function(d) { return innerHeight - (innerHeight * (d/MaxRange)); })
+  //   .attr("height", function(d) { return innerHeight * (d/MaxRange); })
+  //   .on('mouseover', function(d, i) {
+  //     return tooltip.style("visibility", "visible").text("Percent: " + (Number(d).toFixed(2)) + "%");
+  //   })
+  //   .on('mouseout', function() {
+  //     return tooltip.style("visibility", "hidden");
+  //   })
+  //   .on("mousemove", function(){return tooltip.style("top",
+  //   (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+  //   })
+  //   .on("click", function(d, i) {
+  //     console.log("d: " + d);
+  //     console.log("i: " + i);
+  //     d3.event.stopPropagation();
+  // });
 
 
-  // TODO: Append Y axis
-  chart
-    .append("g")
-    .call(yAxis);
-  });
+  // // Orient the x and y axis
+  // var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+  // var yAxis = d3.svg.axis().scale(yScale).orient("left");
+  // //console.log(yAxis);
+  // // TODO: Append X axis
+  // chart
+  //   .append("g")
+  //   .call(xAxis)
+  //   .attr("transform", "translate(" + 0 + "," + innerHeight + ")")
+  //   .selectAll("text")
+  //   .attr("transform", "rotate(" + -45 + ")")
+  //   .style("text-anchor", "end");
+
+
+  // // TODO: Append Y axis
+  // chart
+  //   .append("g")
+  //   .call(yAxis);
+  // });
 
 
 

@@ -1,0 +1,91 @@
+
+.center {
+  text-align: center;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main .jumbotron {
+  background-image: url("../../image/jumbotron.jpg");
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  margin-bottom: 0;
+}
+
+
+.title {
+  margin-left: 55%;
+  margin-right: 10%;
+
+}
+
+#name {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 100pt;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 50px;
+}
+
+.description {
+  color: white;
+  text-align:  center;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.btn {
+  width: 100px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 350px;
+  font-weight: 300;
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: 2px solid black;
+}
+
+.fine-dining {
+  background: url("../../image/fine-dining2.jpg");
+  height: 400px;
+  width: auto;
+  background-size: contain;
+  margin-top: 0px;
+  padding-top: 0px;
+  background-position: center;
+}
+
+.slider {
+  margin-top:2em; 
+  margin-bottom:2em;  
+}
+
+.submit-btn {
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: white; 
+  color: #4CAF50; 
+  border: 1px solid #4CAF50;
+}
+
+.form {
+
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}

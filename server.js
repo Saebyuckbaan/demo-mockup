@@ -49,6 +49,10 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
+app.get('/form', function(req, res) {
+  res.render('form');
+});
+
 
 //pgSQL Queryring
 app.get('/delphidata', router.query.delphidata);

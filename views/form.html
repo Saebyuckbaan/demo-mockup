@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PEACH!</title>
+	
+	<!-- CSS Declaration-->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/jquery.range.css">
+
+  <!-- Font-->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="./css/form.css">
+
+    
+
+</head>
+<body>
+
+  <div class ="main">
+  	<div class="jumbotron">
+  		<div class="title">
+  			<h1 id="name">peach</h1>
+  			<p class="description">Our goal is to help restaurant owners identify the most prospective location in San Diego to open a restaurant based on four different factors: competition, consumers, location safety, and budget</p>
+  			<div class="center">
+  				<a id="start-btn" class="btn" type="button">Let's get started</a>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+	
+	<div class="fine-dining"></div>
+
+
+
+  <div class ="container form" id="form-section">
+    <div class="col-xs-12
+                col-sm-offset-1 col-sm-10
+                col-md-offset-4 col-md-4 
+                col-lg-offset-4 col-lg-4">
+      <!-- Form to submit data -->
+      <form action="/" method="get">
+        <div class="form-group">
+          <!-- Label -->
+          <label for="style">What style of restaurant?</label>
+
+          <!-- Input -->
+          <select id="style" class="form-control" name="style" required>
+            <option value = "-1" selected disabled>Select an option</option>
+            <option value = "1" >Fast Food</option>
+            <option value = "2" >Sit-Down Restaurant</option>
+            <option value = "3" >Bar (21+)</option>
+            <option value = "4" >Fine Dining</option>
+            <option value = "5" >I don't know</option>
+          </select>
+
+        </div>
+        
+        <div class="form-group">
+          <!-- Label -->
+          <label for="targeting">What type of consumer are your targeting?</label>
+          
+
+          <select id="target" class="form-control" name="target" required>
+            <option value = "-1" selected disabled>Select an option</option>
+            <option value ="1" >Family</option>
+            <option value ="2" >Teenager</option>
+            <option value ="3" >College Students</option>
+            <option value ="4" >Any Consumers</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <!-- Label -->
+          <label for="safety">Do you care about location safety?</label>
+          
+          <!-- SLIDER! -->
+          <div class="slider">
+            <input type="hidden" class="safety-slider" value="0" name="safety"/>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <!-- Label -->
+          <label for="rent">What is your budget for your rent?</label>
+          
+          <!-- SLIDER! -->
+          <div class="slider">
+            <input type="hidden" class="rent-slider" value="0" name="rent"/>
+          </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="col-lg-offset-3">
+          <input class="submit-btn" type="submit" value="Submit">
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+	<!-- Javascript Declaration-->
+<script type="text/javascript" src="./js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/jquery.range-min.js"></script>
+<script type="text/javascript" src="./js/d3.min.js"></script>
+<script type="text/javascript" src="./js/d3-legend.js"></script>
+<script type="text/javascript" src="./js/map.js"></script>  
+
+</body>
+</html>

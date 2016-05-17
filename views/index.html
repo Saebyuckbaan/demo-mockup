@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/index.css" type="text/css">
+
+    <title>Data visual solution</title>
     <!-- Colorbrewer -->
     <!-- <link rel="stylesheet" href="css/colorbrewer.css" type="text/css"> -->
   </head>
@@ -15,20 +17,12 @@
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
       {{> navbar}}
 
-      <div class="jumbotron" id="main-section">
-        <div class="title">
-          <h1 id="name">ÜBERÜNO</h1>
-          <p>Our goal is to help Uber/Lyft Drivers have a higher prospect of more profit by identifying areas in San Diego with the least availability of vehicles.
-          <div>
-            <a href="#map-section" class="btn btn-lg active" id="where-btn-2" role="button">Learn Where The Prospective Areas Are In San Diego</a>
-          </div>
-        </div>
-      </div>
+
       <div id="map-section" class="container-fluid">
           <div class = "row">
             <div class = "col-sm-12 col-lg-4 col-md-5">
               <div class="description">
-                <h1>Availability of Vehicles in San Diego</h1><br>
+                <h1>Business Geo-based prospects</h1><br>
                 <p>Pick a location or hover over the map to learn more about the area.</p>
               </div>
               <div class="btn-group">
@@ -44,13 +38,13 @@
                 <h1 class="info"></h1> <!--Location-->
                 <div class="row">
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                    <h4>Number of Households Who Don't Have Vehicles Available</h5>
+                    <h4>Reward/Risk factor score</h5>
                   </div>
                   <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                    <h4>Total Households in the Area</h5>
+                    <h4>Potential demographic target size</h5>
                   </div>
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                    <h4>Percentage of Households That Don't Have Vehicles</h4>
+                    <h4>Percentage return on investments</h4>
                   </div>
                 </div>
 
@@ -75,36 +69,8 @@
             {{> map}}
 
           </div> <!--row-->
-          <div class="row">
-            <div class="button2">
-              <a href="#stat-section" class="btn btn-lg active" id="where-btn" role="button">So where should you go?</a>
-            </div>
-          </div>
-     </div> <!--container-->
-      <div id="stat-section" class="container-fluid">
-        <div class="description">
-          <h1>Where is the most prospective area in San Diego?</h1>
-          <p>assuming areas with high percentage of households that do not own any vehicle are more likely in need of uber/lyft drivers.</p>
-          <br>
-          <div class="container central">
-          <div class="row">
-            <div class = "col-xs-6">
-              <h1 class="data5"></h1>
-            </div>
-            <div class = "col-xs-6">
-              <h1 class="data4"></h1>
-            </div>
 
-          </div>
-        </div>
-          
-          
-        </div>
-        <div class="graph">
-          <h1>Percentage of Households That Don't Have Vehicles in San Diego</h1>
-          <div class="chart"></div>
-        </div>
-      </div>
+     </div> <!--container-->
 
 
 
