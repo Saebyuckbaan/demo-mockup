@@ -45,11 +45,11 @@ app.use(session({ secret: 'keyboard cat',
 app.set('port', process.env.PORT || 3000);
 
 //routes
-app.get('/', function(req, res){
+app.get('/form', function(req, res){
   res.render('index');
 });
 
-app.get('/form', function(req, res) {
+app.get('/', function(req, res) {
   res.render('form');
 });
 
